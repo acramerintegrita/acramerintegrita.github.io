@@ -15,6 +15,7 @@ GitHub baut die Seite nach jeder Änderung automatisch neu (Jekyll, 1–2 Minute
 | Impressum, Datenschutzerklärung | `impressum.html`, `datenschutz.html` |
 | Externe Dienste mit Einwilligung | `_data/consent.yml` (+ Datenschutzerklärung) |
 | Farben, Abstände, Schriften | `assets/css/main.css` |
+| Logo (`assets/images/logo/`), Favicons (`favicon.*`, `apple-touch-icon.png`, `icon-*.png`) | Kopien aus dem Design-Repo `integrita-design` – dort ändern und neu kopieren, nicht hier bearbeiten |
 
 Gelb markierte Stellen auf der Website (z. B. `[E-Mail einfügen]`) sind noch nicht ausgefüllte Angaben aus `_config.yml`.
 

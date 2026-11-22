@@ -15,6 +15,8 @@ title: "Integrita – Audit & Advisory"
 tagline: "Informationssicherheit & Datenschutz"
 description: "Integrita Audit & Advisory – Informationssicherheit & Datenschutz. Pragmatisch gedacht. Unabhängig geprüft. Externer DSB, ISB, Zertifizierungsaudits ISO 27001 & 9001, München."
 lang: de_DE
+# Logo für Suchmaschinen (strukturierte Daten). Quelle: Design-Repo integrita-design
+logo: /assets/images/logo/integrita-signet-512.png
 
 # Adresse der Website. Bei eigener Domain hier eintragen (und Datei CNAME anlegen).
 url: "https://acramerintegrita.github.io"

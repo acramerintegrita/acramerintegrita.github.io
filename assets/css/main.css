@@ -81,16 +81,9 @@ a:hover { color: var(--p2); }
   max-width: var(--max); margin: 0 auto; height: var(--hdr);
   display: flex; align-items: center; justify-content: space-between; gap: 16px;
 }
-.logo {
-  font-family: var(--serif); font-size: 22px; font-weight: 700; color: var(--p);
-  letter-spacing: .05em; text-decoration: none; line-height: 1.2;
-}
-.logo:hover { color: var(--p); }
-.logo span {
-  display: block; margin-top: -1px;
-  font-family: var(--sans); font-size: 10px; font-weight: 400; color: var(--a-text);
-  letter-spacing: .15em; text-transform: uppercase;
-}
+/* Logo aus dem Design-Repo (Mindestbreite laut Styleguide: 150 px) */
+.logo { display: block; flex-shrink: 0; line-height: 0; }
+.logo img { height: 45px; width: auto; }
 .nav { display: flex; gap: 2px; align-items: center; }
 .nav a {
   font-size: 13px; font-weight: 500; color: var(--s); text-decoration: none;
@@ -233,7 +226,7 @@ a.card:hover, .card:hover { border-color: var(--a); box-shadow: 0 8px 24px rgba(
 .box p { font-size: 14px; color: var(--s); line-height: 1.7; }
 .box p + p { margin-top: 6px; }
 .beirat-box { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: center; }
-.beirat-box .img-ph, .beirat-box .img-real { height: 160px; width: 100%; object-fit: cover; border-radius: 6px; }
+.beirat-box .img-ph, .beirat-box .img-real { height: 260px; width: 100%; object-fit: cover; object-position: 50% 30%; border-radius: 6px; }
 
 /* --- Bild-Platzhalter ------------------------------------------------------- */
 .img-ph {

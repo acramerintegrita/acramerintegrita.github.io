@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Export aus logo/quelle/integrita-favicon-vereinfacht.svg (export.py) - nicht direkt bearbeiten -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-30.73 -9.22 245.87 245.87" role="img">
+  <style>@media (prefers-color-scheme: dark) { #signet { fill: #FFFFFF; } }</style>
+  <title>Integrita</title>
+  <path id="signet" fill="#0A3D62" fill-rule="evenodd" d="M92.2 0Q134.4 13.7 184.4 21.6L184.4 109C184.4 163.5 138.4 213.9 92.2 227.2C46 213.9 0 163.5 0 109L0 21.6Q50 13.7 92.2 0ZM15.37 36.88L15.37 67.61L169.03 67.61L169.03 36.88ZM30.73 82.98L30.73 152.13L61.47 172.57L61.47 82.98ZM76.83 82.98L76.83 182.86L92.2 193.08L107.57 182.86L107.57 82.98ZM122.93 82.98L122.93 172.57L153.67 152.13L153.67 82.98Z" />
+</svg>

@@ -152,6 +152,8 @@
   titel: Advisory
   kurz: 'ISMS · QMS · BCM · AI Governance · Compliance · DSMS · IKS'
   icon: '<path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/>'
+  bild: stakeholderanalyse.jpg
+  bild_beschreibung: 'Andreas J. Cramer im ISMS-Workshop zur Analyse der interessierten Parteien'
   angebote:
     - titel: ISMS-Einführung (ISO 27001)
       kontext: >-
@@ -265,7 +267,7 @@
   kurz: 'Awareness · Management-Briefings · Auditoren-Ausbildung'
   icon: '<path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/>'
   bild: schulung.jpg
-  bild_beschreibung: 'Schulungsfoto (Andreas vor Klasse)'
+  bild_beschreibung: 'Andreas J. Cramer bei einer Schulung zum Informationssicherheits-Managementsystem'
   angebote:
     - titel: Informationssicherheit & Datenschutz
       kontext: >-
