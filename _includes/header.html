@@ -1,0 +1,22 @@
+<a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
+<header class="hdr">
+  <div class="hdr-in">
+    <a href="{{ '/' | relative_url }}" class="logo" aria-label="Integrita – zur Startseite">INTEGRITA<span>Audit &amp; Advisory</span></a>
+    <button class="nav-toggle" type="button" aria-controls="hauptnavigation" aria-expanded="false" aria-label="Menü öffnen">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <nav class="nav" id="hauptnavigation" aria-label="Hauptnavigation">
+      {%- for item in site.data.navigation -%}
+        {%- assign aktiv = false -%}
+        {%- if item.url == "/" -%}
+          {%- if page.url == "/" -%}{%- assign aktiv = true -%}{%- endif -%}
+        {%- else -%}
+          {%- assign laenge = item.url | size -%}
+          {%- assign anfang = page.url | slice: 0, laenge -%}
+          {%- if anfang == item.url -%}{%- assign aktiv = true -%}{%- endif -%}
+        {%- endif %}
+      <a href="{{ item.url | relative_url }}"{% if aktiv %} aria-current="page"{% endif %}>{{ item.titel }}</a>
+      {%- endfor %}
+    </nav>
+  </div>
+</header>

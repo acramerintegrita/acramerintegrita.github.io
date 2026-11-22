@@ -1,0 +1,18 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{%- comment -%}
+  Sicherheits-Header als Meta-Tags (GitHub Pages erlaubt keine eigenen HTTP-Header).
+  Wird ein neuer externer Dienst eingebunden, muss er hier freigegeben werden.
+{%- endcomment %}
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="keywords" content="ISO 27001, ISO 9001, Datenschutzbeauftragter, ISB, DSB, ISMS, DSGVO, NIS2, DORA, AI Governance, München, TÜV Austria, Lead Auditor, BCM, Whistleblowing, Beirat">
+<meta name="theme-color" content="#0A3D62">
+{% seo title=false %}
+<title>{% if page.url == "/" %}{{ site.title }} | {{ site.tagline }}{% else %}{{ page.title }} | {{ site.title }}{% endif %}</title>
+{% feed_meta %}
+<link rel="icon" href="{{ '/assets/images/favicon.svg' | relative_url }}" type="image/svg+xml">
+<link rel="preload" href="{{ '/assets/fonts/inter-latin-wght.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ '/assets/fonts/cinzel-latin-wght.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+<script src="{{ '/assets/js/site.js' | relative_url }}"></script>

@@ -1,0 +1,30 @@
+---
+layout: page
+title: Insights
+permalink: /insights/
+description: "Fachbeiträge, Praxis-Einblicke und aktuelle Entwicklungen rund um Informationssicherheit, Datenschutz und Compliance."
+untertitel: "Fachbeiträge, Praxis-Einblicke und aktuelle Entwicklungen rund um Informationssicherheit, Datenschutz und Compliance."
+---
+{%- comment -%}
+  Neue Artikel: Datei im Ordner _posts anlegen, Name JJJJ-MM-TT-titel.md
+  (Vorlage: _drafts/vorlage-artikel.md). Sie erscheinen hier automatisch.
+{%- endcomment -%}
+{%- if site.posts.size > 0 %}
+<div class="post-list">
+  {%- for post in site.posts %}
+  <a class="card" href="{{ post.url | relative_url }}">
+    <p class="post-meta"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d.%m.%Y" }}</time>{% if post.tag %} · {{ post.tag }}{% endif %}</p>
+    <h3>{{ post.title }}</h3>
+    <p>{{ post.untertitel | default: post.excerpt | strip_html | truncate: 180 }}</p>
+    <span class="more">Weiterlesen →</span>
+  </a>
+  {%- endfor %}
+</div>
+<h2 class="sub-t">Demnächst</h2>
+{%- endif %}
+<div class="post-list">
+  <div class="card"><h3>Erstzertifizierung ISO 27001</h3><p>Mehrteilige Serie: Worauf achtet der Auditor? Praxisnahe Einblicke aus der Perspektive beider Seiten des Audit-Tisches.</p><span class="tag">Serie · Demnächst</span></div>
+  <div class="card"><h3>NIS2 für den Mittelstand</h3><p>Was bedeutet NIS2 konkret für Ihr Unternehmen? Pflichten, Fristen und pragmatische Umsetzungsschritte.</p><span class="tag">Artikel · Demnächst</span></div>
+  <div class="card"><h3>Externer DSB – lohnt sich das?</h3><p>Ab wann ein externer Datenschutzbeauftragter sinnvoll ist und worauf Sie bei der Auswahl achten sollten.</p><span class="tag">Artikel · Demnächst</span></div>
+  <div class="card"><h3>AI Governance im Mittelstand</h3><p>EU AI Act: Was auf Sie zukommt und wie Sie sich pragmatisch vorbereiten können.</p><span class="tag">Artikel · Demnächst</span></div>
+</div>

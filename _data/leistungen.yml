@@ -1,0 +1,325 @@
+# =============================================================================
+# Leistungen – Inhalt der Seite /leistungen/ und der Karten auf der Startseite
+#
+# Aufbau je Leistungsbereich:
+#   id         Kurzname für den Link (z. B. /leistungen/#mandate) – nicht ändern
+#   titel      Überschrift
+#   kurz       Kurzbeschreibung für die Startseiten-Karte
+#   angebote   Liste der einzelnen Angebote mit:
+#                titel, kontext (Ausgangslage), leistungen (Liste),
+#                warum ("Warum Integrita"), format (optional)
+#
+# Tipp: Texte mit Doppelpunkt in einfache Anführungszeichen setzen: 'Text: mehr'
+#       Ein Apostroph im Text wird dann verdoppelt: 'Andreas'' Netzwerk'
+# =============================================================================
+
+- id: mandate
+  titel: Mandate
+  kurz: 'Ext. DSB · Ext. ISB · Whistleblowing · Aufsichtsrat & Beirat'
+  icon: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>'
+  angebote:
+    - titel: Externer Datenschutzbeauftragter (DSB)
+      kontext: >-
+        Ihr Unternehmen verarbeitet personenbezogene Daten und beschäftigt mehr als
+        20 Mitarbeitende? Dann sind Sie gesetzlich verpflichtet, einen
+        Datenschutzbeauftragten zu benennen (Art. 37 DSGVO, § 38 BDSG). Kein DSB oder
+        ein unqualifizierter interner DSB bedeutet Bußgeldrisiko bis 10 Mio. € und
+        persönliche Haftung der Geschäftsführung.
+      leistungen:
+        - 'Formelle Benennung als externer DSB gegenüber der Aufsichtsbehörde'
+        - 'Laufende Überwachung der Datenschutz-Compliance'
+        - 'Verzeichnis der Verarbeitungstätigkeiten (VVT) – Aufbau und Pflege'
+        - 'Datenschutz-Folgenabschätzungen (DSFA) bei risikobehafteten Verarbeitungen'
+        - 'Schulung Ihrer Mitarbeitenden (jährlich)'
+        - 'Datenpannen-Management: Bewertung, Meldung, Dokumentation'
+        - 'Prüfung und Verhandlung von Auftragsverarbeitungsverträgen (AVV)'
+        - 'Ansprechpartner für Betroffenenanfragen und Aufsichtsbehörden'
+      warum: >-
+        Ein DSB, der nicht nur Jura zitiert, sondern Ihre IT-Systeme versteht. Einer,
+        der selbst ISMS aufgebaut hat und Datenschutz im technisch-organisatorischen
+        Kontext denkt – nicht nur im juristischen.
+
+    - titel: Externer Informationssicherheitsbeauftragter (ISB)
+      kontext: >-
+        NIS2, DORA, KRITIS, ISO 27001 – die Anforderungen an Informationssicherheit
+        steigen rasant. Ein ISB ist für viele Unternehmen nicht mehr optional, sondern
+        regulatorisch gefordert oder vom Kunden verlangt. Eine interne Vollzeitstelle
+        lohnt sich oft nicht – ein erfahrener externer ISB liefert Konzern-Expertise
+        zum Bruchteil der Kosten.
+      leistungen:
+        - 'Übernahme der ISB-Funktion mit klarer Rollenabgrenzung zur GF'
+        - 'Aufbau oder Weiterentwicklung Ihres ISMS (ISO 27001-konform)'
+        - 'Risikobewertung und Maßnahmensteuerung'
+        - 'Steuerung technischer und organisatorischer Maßnahmen (TOMs)'
+        - 'Regelmäßiges Management-Reporting an die Geschäftsführung'
+        - 'Vorbereitung und Begleitung von Zertifizierungsaudits'
+        - 'Incident-Response-Koordination bei Sicherheitsvorfällen'
+        - 'Lieferantensicherheit: Bewertung und Überwachung'
+      warum: >-
+        Ein ISB, der ein ISMS nicht nur verwaltet, sondern selbst an mehreren
+        internationalen Standorten aufgebaut hat. Der weiß, was ein Auditor sehen
+        will – weil er selbst einer ist.
+
+    - titel: Hinweisgebersystem (Whistleblowing)
+      kontext: >-
+        Seit Juli 2023 sind Unternehmen ab 50 Beschäftigten verpflichtet, eine interne
+        Meldestelle einzurichten (HinSchG). Verstöße werden mit Bußgeldern bis
+        50.000 € geahndet. Viele Unternehmen haben noch kein System – oder eines, das
+        den Anforderungen nicht standhält.
+      leistungen:
+        - 'Einrichtung einer gesetzeskonformen internen Meldestelle'
+        - 'Funktion als unparteiische Vertrauensperson (Meldestellen-Beauftragter)'
+        - 'Sicherer, vertraulicher Meldekanal (digital oder analog)'
+        - 'Eingangsbestätigung innerhalb 7 Tagen, Rückmeldung innerhalb 3 Monaten'
+        - 'Dokumentation, Plausibilitätsprüfung und Weiterleitung an GF'
+        - 'Schutz der hinweisgebenden Person gem. HinSchG / EU-RL'
+        - 'Jährliche Berichterstattung an die Geschäftsführung'
+      warum: >-
+        Unabhängig, verschwiegen, erfahren im Umgang mit sensiblen Informationen. Als
+        externer Beauftragter keine internen Interessenkonflikte – Ihre
+        Mitarbeitenden vertrauen dem System.
+
+    - titel: Aufsichtsrat & Beirat
+      kontext: >-
+        Gute Governance braucht unabhängige Kontrolle und Beratung. Ein kompetent
+        besetztes Kontrollgremium ist Wertschutz, nicht Bürokratie. Gerade im
+        Mittelstand fehlt oft die Brücke zwischen Finanzexpertise,
+        IT-Risikoverständnis und regulatorischer Einordnung.
+      leistungen:
+        - 'Unabhängiges Mandat als Beirat oder Aufsichtsrat'
+        - 'Fokus: Finanzen, Controlling, Reporting, IT-Risiko, Compliance'
+        - 'Kritische Begleitung der Geschäftsführung – konstruktiv, nicht blockierend'
+        - 'Expertise an der Schnittstelle Finance × IT × Governance'
+        - 'Prüfung von Jahresabschlüssen, Business Cases und Investitionsentscheidungen'
+        - 'Frühwarnsystem für regulatorische Risiken (NIS2, DORA, DSGVO)'
+      warum: >-
+        Langjährige Erfahrung als Beiratsvorsitzender eines Investmentfonds (seit
+        2021). Controlling und Finance aus der eigenen Karriere – nicht angelesen.
+        IT-Risiko und Compliance aus der Praxis – nicht aus dem Lehrbuch.
+
+- id: audits
+  titel: Audits
+  kurz: 'ISO 27001 · ISO 9001 · Interne Audits · Lieferantenaudits'
+  icon: '<path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>'
+  angebote:
+    - titel: ISO 27001 – Zertifizierungsaudits
+      kontext: >-
+        Eine ISO 27001-Zertifizierung ist mehr als ein Siegel – sie ist der Nachweis,
+        dass Ihre Organisation Informationssicherheit systematisch lebt. Immer mehr
+        Kunden, Partner und Regulierer verlangen den Nachweis. Ohne Zertifikat
+        verlieren Sie Ausschreibungen und Kundenvertrauen.
+      leistungen:
+        - 'Erstaudits, Überwachungsaudits und Rezertifizierungsaudits'
+        - 'Prüfung als akkreditierter Lead Auditor (TÜV Austria)'
+        - 'Prüfung aller Annex-A-Controls und Ihres Risikomanagements'
+        - 'Auditbericht mit klaren, umsetzbaren Feststellungen'
+        - 'Nachverfolgung von Korrekturmaßnahmen'
+        - 'Vertrauliche und professionelle Durchführung'
+      warum: >-
+        Ich prüfe nicht nur Dokumente – ich verstehe Ihr Geschäft. Weil ich selbst
+        ISMS aufgebaut habe, kenne ich die Herausforderungen auf beiden Seiten. Meine
+        Audits sind gründlich, fair und praxisorientiert – keine Überraschungen, kein
+        „Gotcha“.
+
+    - titel: ISO 9001 – Zertifizierungsaudits
+      kontext: >-
+        Ein Qualitätsmanagementsystem nach ISO 9001 schafft Vertrauen bei Kunden,
+        strukturiert Ihre Prozesse und deckt Verbesserungspotenziale auf.
+      leistungen:
+        - 'Erst-, Überwachungs- und Rezertifizierungsaudits'
+        - 'Prüfung als Lead Auditor (TÜV Austria)'
+        - 'Bewertung Ihrer Prozesslandschaft, Kundenfokus und kontinuierlicher Verbesserung'
+        - 'Klare Auditberichte mit konkretem Verbesserungspotenzial'
+      warum: >-
+        Qualität messen, nicht nur dokumentieren. Ich suche keine formalen
+        Abweichungen – ich suche echte Verbesserungshebel für Ihr Unternehmen.
+
+    - titel: Interne Audits & Lieferantenaudits
+      kontext: >-
+        Regelmäßige interne Audits sind Ihr Frühwarnsystem. Lieferantenaudits sichern
+        Ihre Wertschöpfungskette ab.
+      leistungen:
+        - 'Planung und Durchführung interner Audits (ISO 19011-konform)'
+        - 'Lieferanten- und Auftragsverarbeiter-Audits (vor Ort oder remote)'
+        - 'Unabhängige Bewertung im Auftrag der Geschäftsführung'
+        - 'Auditberichte mit Risikobewertung und Maßnahmenempfehlung'
+        - 'Nachverfolgung und Wirksamkeitsprüfung'
+      warum: >-
+        Objektiv, unabhängig, mit dem Blick des erfahrenen Praktikers. Ich kenne
+        beide Seiten des Audit-Tisches – und weiß, welche Fragen wirklich zählen.
+
+- id: advisory
+  titel: Advisory
+  kurz: 'ISMS · QMS · BCM · AI Governance · Compliance · DSMS · IKS'
+  icon: '<path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/>'
+  angebote:
+    - titel: ISMS-Einführung (ISO 27001)
+      kontext: >-
+        Sie wollen oder müssen ein Informationssicherheits-Managementsystem
+        einführen – wissen aber nicht, wo Sie anfangen? Kunden fordern es, Regulierer
+        erwarten es, Ihr Wettbewerb hat es bereits.
+      leistungen:
+        - 'Gap-Analyse: Wo stehen Sie heute vs. was fordert die Norm?'
+        - 'Scope-Definition und Kontextanalyse'
+        - 'Risikobewertung und Risikobehandlungsplanung'
+        - 'Aufbau der Dokumentationsstruktur (Richtlinien, Verfahren, Nachweise)'
+        - 'Implementierung technischer und organisatorischer Maßnahmen'
+        - 'Interne Audits und Management Review'
+        - 'Zertifizierungsvorbereitung bis zur Audit-Readiness'
+      warum: >-
+        Keine Theoretiker – Praktiker. Ich habe ISMS an mehreren internationalen
+        Standorten selbst aufgebaut. Ich weiß, was der Auditor sehen will – und was
+        wirklich funktioniert. Bei umfangreichen Implementierungen setzt mein
+        Netzwerk um.
+
+    - titel: QMS-Einführung (ISO 9001)
+      kontext: >-
+        Qualitätsmanagement, das lebt – nicht nur auf dem Papier existiert.
+      leistungen:
+        - 'Prozessanalyse und Prozessdesign'
+        - 'Aufbau der QMS-Dokumentation'
+        - 'Definition von Qualitätszielen und KPIs'
+        - 'Schulung interner Auditoren'
+        - 'Begleitung bis zur Zertifizierungsreife'
+      warum: >-
+        Mein Netzwerk und ich verbinden Qualitätsmanagement mit IT- und
+        Governance-Erfahrung. Kein isoliertes QMS, sondern integriert in Ihre
+        bestehende Systemlandschaft.
+
+    - titel: Business Continuity Management (BCM)
+      kontext: >-
+        Was passiert, wenn Ihre IT ausfällt? Wenn ein Lieferant wegbricht? Wenn ein
+        Rechenzentrum nicht mehr erreichbar ist? BCM gibt Ihnen Antworten – bevor die
+        Fragen real werden.
+      leistungen:
+        - 'Business Impact Analyse (BIA): Welche Prozesse sind kritisch?'
+        - 'BC-Strategie: Welche Maßnahmen greifen im Ernstfall?'
+        - 'BC-Pläne: Konkrete Handlungsanweisungen für Ihr Team'
+        - 'Übungen und Simulationen (Tabletop, Walkthrough, Full-Scale)'
+        - 'Integration mit ISMS und IT-Notfallmanagement'
+      warum: >-
+        Resilienz aufbauen, bevor der Ernstfall eintritt. Pragmatisch, nicht
+        überdimensioniert – angepasst an Größe und Risikoexposition Ihres
+        Unternehmens.
+
+    - titel: AI Governance & Ethics
+      kontext: >-
+        Sie setzen KI ein oder planen es? Der EU AI Act macht Governance zur
+        Pflicht – unabhängig von der Unternehmensgröße.
+      leistungen:
+        - 'KI-Inventarisierung: Welche KI-Systeme setzen Sie ein?'
+        - 'Risikoklassifizierung nach EU AI Act'
+        - 'Governance-Framework: Verantwortlichkeiten, Kontrollen, Dokumentation'
+        - 'Responsible AI: Fairness, Transparenz, Erklärbarkeit'
+        - 'Audit-Readiness für KI-Systeme'
+      warum: >-
+        Erfahrung aus AI-Audits und Governance-Assessments in der Finanzbranche.
+        Nicht nur Theorie – praktische Umsetzung des regulatorischen Rahmens.
+
+    - titel: Compliance & Regulatorik
+      kontext: >-
+        NIS2, DORA, KRITIS – die regulatorische Landschaft wird immer komplexer.
+        Geschäftsführer haften persönlich. Die Frage ist nicht ob, sondern wann der
+        Prüfer kommt.
+      leistungen:
+        - 'Betroffenheitsanalyse: Welche Regulierung betrifft Ihr Unternehmen?'
+        - 'Gap-Analyse: Wo stehen Sie vs. wo müssen Sie hin?'
+        - 'Maßnahmenplanung und Umsetzungsbegleitung'
+        - 'Meldepflichten, Nachweisführung, Dokumentation'
+        - 'Vorbereitung auf behördliche Prüfungen'
+      warum: >-
+        25 Jahre im regulierten Umfeld – von Solvency II über DSGVO bis NIS2.
+        Regulatorik pragmatisch umsetzen, nicht in Panik geraten.
+
+    - titel: DSMS & Internes Kontrollsystem (IKS)
+      kontext: >-
+        Ein Datenschutz-Managementsystem und ein Internes Kontrollsystem machen
+        Compliance nachweisbar – gegenüber Aufsichtsbehörden, Wirtschaftsprüfern und
+        Kunden.
+      leistungen:
+        - 'Aufbau Datenschutz-Managementsystem (integriert mit ISMS)'
+        - 'Design von Kontrollen und Kontrollnachweisen'
+        - 'Prozesskontrollen, IT-Kontrollen, Zugriffskontrollen'
+        - 'Prüfbarkeit für Wirtschaftsprüfer (SOX, ISAE 3402)'
+        - 'Governance-Strukturen, die funktionieren – nicht nur existieren'
+      warum: >-
+        Controlling- und Finance-Hintergrund trifft IT-Governance. Ich verstehe, was
+        der Wirtschaftsprüfer erwartet – und baue Ihr IKS so, dass es besteht.
+
+    - titel: Vendor Risk & IT-Risikomanagement
+      kontext: >-
+        Ihre Lieferkette ist nur so sicher wie Ihr schwächstes Glied. IT-Risiken
+        enden nicht an Ihrer Firewall – sie sitzen bei Ihren Dienstleistern.
+      leistungen:
+        - 'Aufbau eines Vendor-Risk-Management-Prozesses'
+        - 'Bewertung und Klassifizierung Ihrer Lieferanten und Auftragsverarbeiter'
+        - 'IT-Risikoidentifikation, -bewertung und -behandlung'
+        - 'Risiko-Reporting an die Geschäftsführung'
+        - 'Integration mit ISMS und Datenschutz'
+      warum: >-
+        3.500+ Verträge international gesteuert. Vendor Risk ist für mich kein
+        theoretisches Konzept – es war mein Tagesgeschäft.
+
+- id: schulung
+  titel: Schulung
+  kurz: 'Awareness · Management-Briefings · Auditoren-Ausbildung'
+  icon: '<path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/>'
+  bild: schulung.jpg
+  bild_beschreibung: 'Schulungsfoto (Andreas vor Klasse)'
+  angebote:
+    - titel: Informationssicherheit & Datenschutz
+      kontext: >-
+        Die beste Technologie nützt nichts, wenn Ihre Mitarbeitenden den
+        Phishing-Link anklicken. 90% aller Sicherheitsvorfälle beginnen beim
+        Menschen.
+      leistungen:
+        - 'Grundlagenschulung Informationssicherheit und Datenschutz'
+        - 'Auffrischungsschulungen (jährlich)'
+        - 'Rollenspezifische Vertiefung (IT, HR, Vertrieb, GF)'
+        - 'Praxisnahe Szenarien statt PowerPoint-Monotonie'
+        - 'Nachweis für Auditoren und Aufsichtsbehörden'
+      format: 'Format: Vor Ort, remote oder hybrid · 60–120 Min.'
+
+    - titel: Social Engineering & Phishing Awareness
+      kontext: >-
+        Ihre Mitarbeitenden sind die letzte Verteidigungslinie – und gleichzeitig
+        das größte Einfallstor.
+      leistungen:
+        - 'Interaktive Workshops mit Live-Demos'
+        - 'Erkennung von Phishing, Vishing, Smishing, Pretexting'
+        - 'Reaktionstraining: Was tun im Verdachtsfall?'
+        - 'Aufbau einer nachhaltigen Sicherheitskultur'
+      format: 'Format: Workshop, 90–180 Min. · Auch als Team-Event'
+
+    - titel: Management-Briefings
+      kontext: >-
+        Als Geschäftsführer haften Sie persönlich – aber wer erklärt Ihnen NIS2, DORA
+        oder den AI Act so, dass Sie entscheiden können?
+      leistungen:
+        - 'Kompakte Briefings für Geschäftsführung und Vorstand'
+        - 'Themen: NIS2, DORA, EU AI Act, HinSchG, KRITIS, DSGVO'
+        - 'Entscheidungsrelevant aufbereitet – ohne Fachjargon'
+        - 'Handlungsempfehlungen und Priorisierung'
+      warum: >-
+        Ich spreche die Sprache der Geschäftsführung – nicht die des IT-Admins.
+      format: 'Format: 60–90 Min. · Exklusiv für Führungskreis'
+
+    - titel: Auditoren-Ausbildung (ISO 19011)
+      kontext: >-
+        Gute interne Auditoren findet man nicht – man bildet sie aus.
+      leistungen:
+        - 'Ausbildung interner Auditoren nach ISO 19011'
+        - 'Audit-Methodik, Gesprächsführung, Fragetechniken'
+        - 'Berichterstattung und Nachverfolgung'
+        - 'Praktische Übung an echten Szenarien'
+      format: 'Format: 1–2 Tage · Vor Ort oder remote'
+
+    - titel: BCM & Notfallübungen
+      kontext: >-
+        Ein Plan, der nie getestet wurde, ist kein Plan – sondern eine Hoffnung.
+      leistungen:
+        - 'Tabletop-Exercises für Führungsteams'
+        - 'Walkthrough-Übungen für operative Teams'
+        - 'Simulation kritischer Szenarien (Cyberangriff, Stromausfall, Lieferantenausfall)'
+        - 'Nachbesprechung, Lessons Learned, Maßnahmenplan'
+      format: 'Format: Halbtag bis Ganztag · Vor Ort'

@@ -1,0 +1,97 @@
+---
+layout: page
+title: Datenschutzerklärung
+permalink: /datenschutz/
+prose: true
+legal: true
+---
+{%- comment -%}
+  Kontaktdaten und Stand kommen aus _config.yml.
+  Stellen mit "PRÜFEN" bitte vor Veröffentlichung fachlich kontrollieren.
+  Wird ein neuer Dienst eingebunden, muss er hier UND in _data/consent.yml ergänzt werden.
+{%- endcomment -%}
+{%- assign k = site.kontakt -%}
+
+<h2>1. Verantwortlicher</h2>
+<p>Verantwortlich für die Datenverarbeitung auf dieser Website im Sinne der Datenschutz-Grundverordnung (DSGVO):</p>
+<p><strong>{{ k.name }}</strong><br>
+{{ k.firma }}<br>
+{% include ph.html wert=k.strasse text="Straße + Hausnummer" %}<br>
+{% include ph.html wert=k.plz text="PLZ" %} {{ k.ort }}<br>
+E-Mail: {% if k.email != "" %}<a href="mailto:{{ k.email }}">{{ k.email }}</a>{% else %}{% include ph.html text="E-Mail einfügen" %}{% endif %}<br>
+Telefon: {% include ph.html wert=k.telefon text="Telefon einfügen" %}</p>
+
+<h2>2. Das Wichtigste in Kürze</h2>
+<ul>
+  <li>Diese Website verwendet <strong>kein Tracking, keine Analyse-Tools und keine Werbe-Cookies</strong>.</li>
+  <li>Es wird nur ein einziges Cookie gesetzt: Es speichert Ihre Auswahl in den <a href="{{ '/cookie-einstellungen/' | relative_url }}">Cookie-Einstellungen</a>.</li>
+  <li>Schriften und alle übrigen Bestandteile der Website werden von unserem eigenen Webspace geladen – es gibt keine Verbindung zu Google oder anderen Drittanbietern beim Seitenaufruf.</li>
+  <li>Das Kontaktformular nutzt den Dienst Formspree und wird erst nach Ihrer Einwilligung freigeschaltet. Alternativ erreichen Sie uns jederzeit per E-Mail.</li>
+</ul>
+
+<h2>3. Hosting über GitHub Pages</h2>
+<p>Diese Website wird über den Dienst GitHub Pages bereitgestellt. Anbieter ist die GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA (ein Unternehmen der Microsoft-Gruppe).</p>
+<p>Beim Aufruf der Website verarbeitet GitHub technisch notwendige Daten, die Ihr Browser automatisch übermittelt, insbesondere: IP-Adresse, Datum und Uhrzeit des Abrufs, aufgerufene Seite bzw. Datei, übertragene Datenmenge, Meldung über erfolgreichen Abruf, Browsertyp und -version, Betriebssystem sowie die zuvor besuchte Seite (Referrer). GitHub protokolliert die IP-Adressen der Besucher nach eigenen Angaben zu Sicherheitszwecken. Wir selbst haben keinen Zugriff auf diese Protokolle und führen sie nicht mit anderen Daten zusammen.</p>
+<p>Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse liegt in der sicheren, stabilen und effizienten Bereitstellung der Website.</p>
+{%- comment -%} PRÜFEN: aktuelle DPF-Zertifizierung von GitHub, Inc. unter dataprivacyframework.gov verifizieren. {%- endcomment %}
+<p>Dabei können Daten in die USA übermittelt werden. Die GitHub, Inc. ist nach dem EU-US Data Privacy Framework zertifiziert; die Übermittlung erfolgt auf Grundlage des Angemessenheitsbeschlusses der EU-Kommission (Art. 45 DSGVO). Weitere Informationen: <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">Datenschutzerklärung von GitHub</a>.</p>
+
+<h2 id="cookies">4. Cookies und Einwilligungsverwaltung</h2>
+<p>Diese Website setzt ausschließlich das Cookie <code>cookie-settings</code>. Es speichert, welchen optionalen Diensten Sie zugestimmt haben, und das Datum Ihrer Auswahl. Es enthält keine Kennung, mit der Sie wiedererkannt werden könnten, und wird nach 12 Monaten automatisch gelöscht.</p>
+<p>Das Speichern dieser Information ist unbedingt erforderlich, um Ihre Auswahl zu respektieren (§ 25 Abs. 2 Nr. 2 TDDDG). Rechtsgrundlage für die Verarbeitung ist Art. 6 Abs. 1 lit. c DSGVO in Verbindung mit Art. 7 Abs. 1 DSGVO (Nachweis der Einwilligung) sowie Art. 6 Abs. 1 lit. f DSGVO.</p>
+<p>Sie können Ihre Auswahl jederzeit in den <a href="{{ '/cookie-einstellungen/' | relative_url }}">Cookie-Einstellungen</a> ändern oder widerrufen. Außerdem können Sie Cookies in Ihrem Browser löschen oder blockieren; dann erscheint beim nächsten Besuch erneut die Abfrage.</p>
+<p>Optionale Dienste, für die wir Ihre Einwilligung einholen:</p>
+<table>
+  <thead><tr><th>Dienst</th><th>Zweck</th><th>Anbieter</th></tr></thead>
+  <tbody>
+    <tr><td>Kontaktformular</td><td>Übermittlung Ihrer Anfrage (siehe Abschnitt 5)</td><td>Formspree, Inc., USA</td></tr>
+  </tbody>
+</table>
+
+<h2 id="kontaktformular">5. Kontaktformular (Formspree)</h2>
+<p>Für das Kontaktformular nutzen wir den Dienst Formspree der Formspree, Inc., USA. Das Formular wird erst freigeschaltet, wenn Sie dem zustimmen. Ihre Eingaben werden erst übertragen, wenn Sie auf „Nachricht senden“ klicken. Vorher werden keine Daten an Formspree gesendet.</p>
+<p><strong>Verarbeitete Daten:</strong> Name, E-Mail-Adresse, Nachricht sowie freiwillig Unternehmen, Telefonnummer und gewähltes Interessengebiet. Beim Absenden verarbeitet Formspree zudem technische Daten wie Ihre IP-Adresse, Datum und Uhrzeit sowie Browserinformationen, auch zur Abwehr von Spam.</p>
+<p><strong>Zweck:</strong> Bearbeitung und Beantwortung Ihrer Anfrage. Formspree leitet die Nachricht per E-Mail an uns weiter.</p>
+<p><strong>Rechtsgrundlage:</strong> Für die Nutzung von Formspree Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Für die Bearbeitung Ihrer Anfrage Art. 6 Abs. 1 lit. b DSGVO, sofern sie auf einen Vertrag oder vorvertragliche Maßnahmen gerichtet ist, ansonsten unser berechtigtes Interesse an der Beantwortung von Anfragen (Art. 6 Abs. 1 lit. f DSGVO). Ihre Einwilligung können Sie jederzeit mit Wirkung für die Zukunft in den <a href="{{ '/cookie-einstellungen/' | relative_url }}">Cookie-Einstellungen</a> widerrufen.</p>
+{%- comment -%}
+  PRÜFEN vor Aktivierung des Formulars:
+  - Auftragsverarbeitungsvertrag (DPA) mit Formspree abschließen
+  - Übermittlungsgrundlage eintragen (DPF-Zertifizierung oder Standardvertragsklauseln)
+  - Aufbewahrung der Einsendungen im Formspree-Konto einstellen/löschen
+{%- endcomment %}
+<p><strong>Auftragsverarbeitung und Übermittlung in die USA:</strong> {% include ph.html text="Nach Abschluss des AVV mit Formspree eintragen: AVV nach Art. 28 DSGVO und Grundlage der Übermittlung (z. B. EU-US Data Privacy Framework oder Standardvertragsklauseln)" %}. Weitere Informationen: <a href="https://formspree.io/legal/privacy-policy/" rel="noopener">Datenschutzerklärung von Formspree</a>.</p>
+<p><strong>Speicherdauer:</strong> Wir löschen Ihre Anfrage, sobald sie abschließend bearbeitet ist und keine gesetzlichen Aufbewahrungspflichten entgegenstehen. Bei Formspree gespeicherte Einsendungen löschen wir regelmäßig.</p>
+
+<h2>6. Kontakt per E-Mail oder Telefon</h2>
+<p>Wenn Sie uns per E-Mail oder Telefon kontaktieren, verarbeiten wir Ihre Angaben (z. B. Name, Kontaktdaten, Inhalt der Anfrage) zur Bearbeitung Ihres Anliegens. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist, im Übrigen Art. 6 Abs. 1 lit. f DSGVO. Die Daten werden gelöscht, sobald sie nicht mehr erforderlich sind und keine gesetzlichen Aufbewahrungspflichten bestehen.</p>
+
+<h2>7. Schriftarten</h2>
+<p>Die auf dieser Website verwendeten Schriften („Inter“ und „Cinzel“) sind lokal eingebunden. Beim Seitenaufruf wird keine Verbindung zu Servern von Google oder anderen Schriftanbietern hergestellt.</p>
+
+<h2>8. Links zu externen Angeboten (LinkedIn)</h2>
+<p>Auf unserer Website verlinken wir auf unser Profil bei LinkedIn. Es handelt sich um einen einfachen Link, nicht um ein eingebundenes Plugin. Erst wenn Sie den Link anklicken, werden Sie zu LinkedIn (LinkedIn Ireland Unlimited Company) weitergeleitet; dort gilt die <a href="https://www.linkedin.com/legal/privacy-policy" rel="noopener">Datenschutzerklärung von LinkedIn</a>.</p>
+
+<h2>9. Verschlüsselung</h2>
+<p>Diese Website wird ausschließlich über eine verschlüsselte Verbindung (HTTPS/TLS) ausgeliefert. Sie erkennen dies am Schloss-Symbol und an „https://“ in der Adresszeile Ihres Browsers.</p>
+
+<h2>10. Ihre Rechte</h2>
+<p>Sie haben gegenüber uns folgende Rechte hinsichtlich der Sie betreffenden personenbezogenen Daten:</p>
+<ul>
+  <li>Recht auf Auskunft (Art. 15 DSGVO)</li>
+  <li>Recht auf Berichtigung (Art. 16 DSGVO)</li>
+  <li>Recht auf Löschung (Art. 17 DSGVO)</li>
+  <li>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+  <li>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</li>
+  <li>Recht auf Widerruf einer erteilten Einwilligung mit Wirkung für die Zukunft (Art. 7 Abs. 3 DSGVO)</li>
+</ul>
+<p><strong>Widerspruchsrecht (Art. 21 DSGVO):</strong> Soweit wir Daten auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO verarbeiten, können Sie aus Gründen, die sich aus Ihrer besonderen Situation ergeben, jederzeit Widerspruch gegen diese Verarbeitung einlegen.</p>
+<p>Zur Ausübung Ihrer Rechte genügt eine formlose Nachricht an die oben genannten Kontaktdaten.</p>
+
+<h2>11. Beschwerderecht bei einer Aufsichtsbehörde</h2>
+<p>Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde über die Verarbeitung Ihrer personenbezogenen Daten zu beschweren. Für uns zuständig ist das Bayerische Landesamt für Datenschutzaufsicht (BayLDA), Promenade 18, 91522 Ansbach.</p>
+
+<h2>12. Pflicht zur Bereitstellung, automatisierte Entscheidungen</h2>
+<p>Sie sind weder gesetzlich noch vertraglich verpflichtet, uns personenbezogene Daten bereitzustellen. Ohne Angabe von Kontaktdaten können wir Ihre Anfrage allerdings nicht beantworten. Eine automatisierte Entscheidungsfindung einschließlich Profiling (Art. 22 DSGVO) findet nicht statt.</p>
+
+<h2>13. Aktualität dieser Datenschutzerklärung</h2>
+<p>Stand: {{ site.datenschutz_stand }}. Wir passen diese Datenschutzerklärung an, wenn sich die Website oder die Rechtslage ändert.</p>

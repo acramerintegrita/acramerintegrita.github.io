@@ -1,0 +1,16 @@
+{%- comment -%}
+  Einwilligungs-Banner. Wird per JavaScript (assets/js/site.js) nur angezeigt,
+  solange noch keine Auswahl gespeichert ist. Die Dienste kommen aus _data/consent.yml.
+  "Alle akzeptieren" und "Nur notwendige" sind bewusst gleich prominent.
+{%- endcomment -%}
+{%- assign optional = site.data.consent | where: "pflicht", false | map: "id" | join: "," -%}
+{%- assign namen = site.data.consent | where: "pflicht", false | map: "name" | join: ", " -%}
+<section class="consent" id="consent-banner" data-consent-banner data-services="{{ optional }}" aria-labelledby="consent-titel" hidden>
+  <h2 id="consent-titel">Ihre Privatsphäre</h2>
+  <p>Diese Website verwendet kein Tracking und keine Werbe-Cookies. Für einige Funktionen nutzen wir externe Dienste, die Sie selbst freigeben: {{ namen }}. Ihre Auswahl können Sie jederzeit unter <a href="{{ '/cookie-einstellungen/' | relative_url }}">Cookie-Einstellungen</a> ändern. Mehr dazu in der <a href="{{ '/datenschutz/' | relative_url }}">Datenschutzerklärung</a>.</p>
+  <div class="consent-actions">
+    <button type="button" class="btn" data-consent-action="alle">Alle akzeptieren</button>
+    <button type="button" class="btn" data-consent-action="notwendig">Nur notwendige</button>
+    <a class="btn btn-outline" href="{{ '/cookie-einstellungen/' | relative_url }}">Einstellungen</a>
+  </div>
+</section>

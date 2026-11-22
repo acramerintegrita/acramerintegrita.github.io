@@ -1,0 +1,70 @@
+# =============================================================================
+# .gitignore – Integrita-Website (öffentliches Repo!)
+# Alles, was hier steht, landet NICHT im Repo und damit NICHT im Internet.
+# Achtung: Eine Datei, die schon einmal committet wurde, bleibt in der
+# Git-Historie – auch wenn sie später hier eingetragen wird.
+# =============================================================================
+
+# --- KI-Assistenten / Agenten (Claude Code & Co.) ----------------------------
+# Projekt-Einstellungen, lokale Freigaben, Agenten-Notizen und Übergabe-Doku
+.claude/
+CLAUDE.md
+CLAUDE.local.md
+.mcp.json
+_agent-work/
+graphify-out/
+.playwright-mcp/
+# andere Assistenten, falls jemand sie nutzt
+AGENTS.md
+.cursor/
+.aider*
+.codex/
+.gemini/
+.continue/
+
+# --- Zugangsdaten, Schlüssel, Secrets ----------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.csr
+id_rsa*
+id_ed25519*
+*.kdbx
+.netrc
+.npmrc
+secrets.*
+*secret*
+*credential*
+*passw*
+*.token
+token.txt
+
+# --- Private Arbeitsablage ---------------------------------------------------
+# Für Entwürfe, Originalfotos, Verträge, Notizen: einfach hier hineinlegen.
+_privat/
+HANDBUCH.md
+
+# --- Jekyll-Build-Artefakte (GitHub Pages baut selbst) -----------------------
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+.bundle/
+vendor/
+node_modules/
+
+# --- Betriebssystem & Editoren ----------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*
+*.tmp
+*.swp
+*~
+.vscode/
+.idea/

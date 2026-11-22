@@ -1,0 +1,17 @@
+{%- comment -%}
+  Bild mit automatischem Platzhalter.
+  Aufruf:  {% include bild.html datei="andreas-portrait.jpg" alt="Andreas J. Cramer" beschreibung="Porträtfoto" %}
+  Liegt die Datei unter assets/images/, wird das Foto gezeigt – sonst ein Platzhalter
+  mit dem erwarteten Dateinamen. Foto hochladen genügt, am Code muss nichts geändert werden.
+{%- endcomment -%}
+{%- assign bild_pfad = "/assets/images/" | append: include.datei -%}
+{%- assign gefunden = site.static_files | where: "path", bild_pfad | first -%}
+{%- if gefunden -%}
+<img class="img-real" src="{{ bild_pfad | relative_url }}" alt="{{ include.alt }}" loading="lazy" decoding="async">
+{%- else -%}
+<div class="img-ph" role="img" aria-label="Platzhalter: {{ include.beschreibung | default: include.alt }}">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3.5"/><path d="M8 5l1.5-2h5L16 5"/></svg>
+  <span>{{ include.beschreibung | default: include.alt }}</span>
+  <code>assets/images/{{ include.datei }}</code>
+</div>
+{%- endif -%}

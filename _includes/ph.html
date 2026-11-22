@@ -1,0 +1,5 @@
+{%- comment -%}
+  Zeigt einen Wert aus _config.yml – oder einen gelben Platzhalter, wenn er leer ist.
+  Aufruf: {% include ph.html wert=site.kontakt.telefon text="Telefon einfügen" %}
+{%- endcomment -%}
+{%- if include.wert and include.wert != "" -%}{{ include.wert }}{%- else -%}<em class="ph">[{{ include.text }}]</em>{%- endif -%}

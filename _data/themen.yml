@@ -1,0 +1,40 @@
+# Themen & Regulatorik – Karten auf der Seite /themen/
+# titel, text, tag (kleines Etikett unter dem Text)
+
+- titel: NIS2
+  text: >-
+    Die EU-Richtlinie für Netz- und Informationssicherheit betrifft deutlich mehr
+    Unternehmen als bisher. Geschäftsführer haften persönlich – bis zu 2% des
+    weltweiten Jahresumsatzes.
+  tag: GF-Haftung
+
+- titel: DORA
+  text: >-
+    Digital Operational Resilience Act – Pflicht für den gesamten Finanzsektor und
+    seine IKT-Dienstleister. Informationssicherheit, ICT-Risikomanagement und
+    Resilienz-Tests sind keine Option mehr.
+  tag: Finanzsektor
+
+- titel: EU AI Act
+  text: >-
+    KI-Verordnung: Risikoklassifizierung, Transparenzpflichten und
+    Governance-Anforderungen. Betrifft jeden, der KI einsetzt oder entwickelt.
+  tag: AI Governance
+
+- titel: KRITIS
+  text: >-
+    Kritische Infrastrukturen: Verschärfte Anforderungen an IT-Sicherheit,
+    Meldepflichten und Nachweisführung. Neue Sektoren, neue Pflichten.
+  tag: Infrastruktur
+
+- titel: DSGVO
+  text: >-
+    Datenschutz ist kein einmaliges Projekt – es ist ein laufender Prozess.
+    Bußgelder bis 20 Mio. € oder 4% des Jahresumsatzes.
+  tag: Datenschutz
+
+- titel: HinSchG
+  text: >-
+    Hinweisgeberschutzgesetz: Interne Meldestelle einrichten ist Pflicht für
+    Unternehmen ab 50 Beschäftigten. Vertraulichkeit, Fristen, Dokumentation.
+  tag: Ab 50 MA Pflicht

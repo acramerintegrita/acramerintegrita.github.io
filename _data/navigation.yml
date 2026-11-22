@@ -1,0 +1,15 @@
+# Hauptnavigation (Reihenfolge = Reihenfolge im Menü)
+- titel: Start
+  url: /
+- titel: Leistungen
+  url: /leistungen/
+- titel: Themen
+  url: /themen/
+- titel: Netzwerk
+  url: /netzwerk/
+- titel: Über mich
+  url: /ueber-mich/
+- titel: Insights
+  url: /insights/
+- titel: Kontakt
+  url: /kontakt/

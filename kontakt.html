@@ -1,0 +1,73 @@
+---
+layout: page
+title: Kontakt
+permalink: /kontakt/
+description: "Kontakt zu Integrita – Audit & Advisory. Unverbindliches Erstgespräch zu Informationssicherheit, Datenschutz und Audits."
+untertitel: "Lassen Sie uns sprechen. Ein unverbindliches Erstgespräch kostet Sie nichts – außer 30 Minuten Ihrer Zeit."
+---
+{%- assign k = site.kontakt -%}
+{%- if site.formspree_id and site.formspree_id != "" -%}
+  {%- assign endpunkt = "https://formspree.io/f/" | append: site.formspree_id -%}
+{%- else -%}
+  {%- assign endpunkt = "" -%}
+{%- endif -%}
+<div class="contact-grid">
+  <div>
+    {%- comment -%}
+      Das Formular ist zunächst gesperrt. Erst nach Einwilligung (Banner, Cookie-Einstellungen
+      oder Knopf unten) wird es freigeschaltet. Übertragen wird erst beim Absenden.
+    {%- endcomment %}
+    <div class="form-gate" data-form-gate>
+      <p><strong>Hinweis zum Kontaktformular:</strong> Ihre Nachricht wird über den Dienst Formspree (Formspree, Inc., USA) an uns übermittelt. Dafür benötigen wir Ihre Einwilligung. Details finden Sie in der <a href="{{ '/datenschutz/#kontaktformular' | relative_url }}">Datenschutzerklärung</a>.</p>
+      <p>Sie möchten das nicht? Schreiben Sie uns einfach direkt per E-Mail (siehe „Direkt erreichen“).</p>
+      <button type="button" class="btn" data-consent-grant="formspree">Kontaktformular aktivieren</button>
+    </div>
+    <div class="form-msg info" data-form-unconfigured hidden>
+      Das Kontaktformular ist noch nicht eingerichtet. Bitte schreiben Sie uns per E-Mail.
+    </div>
+
+    <form id="kontakt-form" data-endpoint="{{ endpunkt }}" data-next="{{ '/danke/' | relative_url }}" method="post" action="{{ endpunkt }}">
+      <fieldset disabled>
+        <legend class="hp">Kontaktformular</legend>
+        <div class="fg"><label for="kf-name">Name *</label><input id="kf-name" name="name" type="text" autocomplete="name" required placeholder="Ihr vollständiger Name"></div>
+        <div class="fg"><label for="kf-firma">Unternehmen</label><input id="kf-firma" name="unternehmen" type="text" autocomplete="organization" placeholder="Firmenname"></div>
+        <div class="fg"><label for="kf-email">E-Mail *</label><input id="kf-email" name="email" type="email" autocomplete="email" required placeholder="ihre@email.de"></div>
+        <div class="fg"><label for="kf-tel">Telefon</label><input id="kf-tel" name="telefon" type="tel" autocomplete="tel" placeholder="+49 ..."></div>
+        <div class="fg"><label for="kf-interesse">Interesse an</label>
+          <select id="kf-interesse" name="interesse">
+            <option value="">Bitte wählen...</option>
+            <option>Externer DSB</option>
+            <option>Externer ISB</option>
+            <option>Zertifizierungsaudit</option>
+            <option>Advisory / Beratung</option>
+            <option>Schulung</option>
+            <option>Aufsichtsrat / Beirat</option>
+            <option>Sonstiges</option>
+          </select>
+        </div>
+        <div class="fg"><label for="kf-nachricht">Nachricht *</label><textarea id="kf-nachricht" name="nachricht" required placeholder="Wie kann ich Sie unterstützen?"></textarea></div>
+        <div class="fg"><label class="chk" for="kf-ds"><input id="kf-ds" name="datenschutz" type="checkbox" value="zur Kenntnis genommen" required><span>Ich habe die <a href="{{ '/datenschutz/' | relative_url }}">Datenschutzerklärung</a> zur Kenntnis genommen. Meine Angaben werden zur Bearbeitung der Anfrage verwendet. *</span></label></div>
+        <div class="hp" aria-hidden="true"><label for="kf-gotcha">Bitte leer lassen</label><input id="kf-gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off"></div>
+        <input type="hidden" name="_subject" value="Neue Anfrage über die Integrita-Website">
+        <button class="btn" type="submit">Nachricht senden</button>
+        <p class="form-msg" data-form-msg role="status" aria-live="polite" hidden></p>
+      </fieldset>
+    </form>
+  </div>
+
+  <div class="direct">
+    <h2>Direkt erreichen</h2>
+    <p>
+      <strong>{{ k.name }}</strong><br>
+      {{ k.firma }}<br>
+      {{ k.ort_kurz }}<br><br>
+      E-Mail: {% if k.email != "" %}<a href="mailto:{{ k.email }}">{{ k.email }}</a>{% else %}{% include ph.html text="E-Mail einfügen" %}{% endif %}<br>
+      Telefon: {% if k.telefon != "" %}<a href="tel:{{ k.telefon | remove: ' ' }}">{{ k.telefon }}</a>{% else %}{% include ph.html text="Telefon einfügen" %}{% endif %}<br>
+      LinkedIn: {% if k.linkedin != "" %}<a href="{{ k.linkedin }}" rel="noopener" target="_blank">Profil öffnen</a>{% else %}{% include ph.html text="LinkedIn-Link einfügen" %}{% endif %}<br><br>
+      <em>Antwortzeit: In der Regel innerhalb von 24 Stunden.</em>
+    </p>
+    <div class="box box-l">
+      <p><strong>Erstgespräch:</strong> 30 Minuten, unverbindlich, kostenlos. Wir besprechen Ihre Situation und klären, ob und wie ich Sie unterstützen kann.</p>
+    </div>
+  </div>
+</div>

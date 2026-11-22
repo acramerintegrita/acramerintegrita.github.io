@@ -1,0 +1,28 @@
+# =============================================================================
+# Einwilligungen (Cookie-Banner und Seite /cookie-einstellungen/)
+#
+# Hier steht jeder Dienst, für den Besucher zustimmen müssen.
+# Die Website lädt KEINE Inhalte von Drittanbietern, bevor zugestimmt wurde.
+#
+# Kommt ein neuer Dienst hinzu (z. B. YouTube-Videos, Analyse-Tool), muss er
+#   1. hier eingetragen,
+#   2. in der Datenschutzerklärung beschrieben und
+#   3. im Code nur geladen werden, wenn IntegritaConsent.has("<id>") wahr ist.
+# =============================================================================
+
+- id: notwendig
+  name: Notwendig
+  pflicht: true
+  beschreibung: >-
+    Speichert Ihre Auswahl in diesem Fenster im Cookie „cookie-settings“ für
+    12 Monate, damit wir Sie nicht bei jedem Besuch erneut fragen. Ohne dieses
+    Cookie funktioniert die Einwilligungsverwaltung nicht.
+
+- id: formspree
+  name: Kontaktformular (Formspree)
+  pflicht: false
+  beschreibung: >-
+    Erlaubt das Absenden des Kontaktformulars über den Dienst Formspree
+    (Formspree, Inc., USA). Ihre Eingaben werden erst beim Klick auf
+    „Nachricht senden“ übertragen. Alternativ erreichen Sie uns jederzeit
+    per E-Mail.

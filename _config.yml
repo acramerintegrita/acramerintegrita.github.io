@@ -1,0 +1,75 @@
+# =============================================================================
+# _config.yml – zentrale Einstellungen der Integrita-Website
+#
+# Hier stehen alle Angaben, die auf mehreren Seiten vorkommen (Kontakt,
+# Impressum, Datenschutz, Footer). Einmal hier ändern -> überall aktuell.
+#
+# Leere Werte ("") werden auf der Seite als gelber Platzhalter angezeigt,
+# damit nichts vergessen wird.
+#
+# WICHTIG: Nach Änderungen an DIESER Datei baut GitHub die Seite neu
+# (dauert 1–2 Minuten). Texte in Anführungszeichen setzen.
+# =============================================================================
+
+title: "Integrita – Audit & Advisory"
+tagline: "Informationssicherheit & Datenschutz"
+description: "Integrita Audit & Advisory – Informationssicherheit & Datenschutz. Pragmatisch gedacht. Unabhängig geprüft. Externer DSB, ISB, Zertifizierungsaudits ISO 27001 & 9001, München."
+lang: de_DE
+
+# Adresse der Website. Bei eigener Domain hier eintragen (und Datei CNAME anlegen).
+url: "https://acramerintegrita.github.io"
+baseurl: ""
+
+# --- Kontakt- und Impressumsangaben -----------------------------------------
+kontakt:
+  name: "Andreas J. Cramer"
+  firma: "Integrita – Audit & Advisory"
+  strasse: ""                     # z. B. "Musterstraße 1"
+  plz: ""                         # z. B. "85640"
+  ort: "Putzbrunn"
+  ort_kurz: "Putzbrunn bei München"
+  email: ""                       # z. B. "kontakt@integrita.de"
+  telefon: ""                     # z. B. "+49 89 123456"
+  linkedin: ""                    # vollständige URL zum LinkedIn-Profil
+  ust_id: ""                      # USt-IdNr., z. B. "DE123456789"
+
+# --- Kontaktformular ----------------------------------------------------------
+# Das Formular wird über Formspree (formspree.io) versendet.
+# 1. Bei formspree.io anmelden, ein Formular anlegen
+# 2. Die Kennung aus der Formular-Adresse hier eintragen
+#    (aus https://formspree.io/f/abcdwxyz -> "abcdwxyz")
+# Solange das Feld leer ist, zeigt die Kontaktseite nur die E-Mail-Adresse.
+formspree_id: ""
+
+# --- Datenschutzerklärung -----------------------------------------------------
+datenschutz_stand: "November 2026"
+
+# --- Jekyll -------------------------------------------------------------------
+permalink: /insights/:year/:title/
+markdown: kramdown
+timezone: Europe/Berlin
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+feed:
+  path: insights/feed.xml
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .bundle
+  - _privat
+  - CLAUDE.md
+  - HANDBUCH.md

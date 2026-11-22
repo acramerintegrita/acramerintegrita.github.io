@@ -1,0 +1,53 @@
+---
+layout: page
+title: Leistungen
+permalink: /leistungen/
+description: "Mandate als externer DSB und ISB, Zertifizierungsaudits ISO 27001 und ISO 9001, Advisory zu ISMS, BCM, AI Governance und Compliance sowie Schulungen."
+untertitel: "Mein Netzwerk und ich beraten strategisch und umsetzungsorientiert. Bei umfangreichen Implementierungen setzen erfahrene Spezialisten aus meinem Netzwerk um. Sie haben einen Ansprechpartner – und die Umsetzungskraft eines ganzen Teams."
+---
+{%- comment -%} Die Inhalte dieser Seite stehen in _data/leistungen.yml {%- endcomment -%}
+<nav class="pills" aria-label="Leistungsbereiche">
+  {%- for bereich in site.data.leistungen %}
+  <a href="#{{ bereich.id }}">{{ bereich.titel }}</a>
+  {%- endfor %}
+</nav>
+
+{%- for bereich in site.data.leistungen %}
+<section class="svc-group" id="{{ bereich.id }}" aria-labelledby="titel-{{ bereich.id }}">
+  <h2 id="titel-{{ bereich.id }}">{{ bereich.titel }}</h2>
+  {%- if bereich.bild %}<div class="svc-layout"><div>{% endif %}
+  {%- for a in bereich.angebote %}
+  <article class="si">
+    <h3>{{ a.titel }}</h3>
+    <p class="context">{{ a.kontext }}</p>
+    <div class="scope">
+      <h4>Was Sie erhalten</h4>
+      <ul>
+        {%- for l in a.leistungen %}
+        <li>{{ l }}</li>
+        {%- endfor %}
+      </ul>
+    </div>
+    {%- if a.warum %}
+    <p class="diff"><strong>Warum Integrita:</strong> {{ a.warum }}</p>
+    {%- endif %}
+    {%- if a.format %}
+    <p class="format">{{ a.format }}</p>
+    {%- endif %}
+  </article>
+  {%- endfor %}
+  {%- if bereich.bild %}
+  </div>
+  <div class="svc-aside">
+    {% include bild.html datei=bereich.bild alt=bereich.bild_beschreibung beschreibung=bereich.bild_beschreibung %}
+  </div>
+  </div>
+  {%- endif %}
+</section>
+{%- endfor %}
+
+<div class="box box-l">
+  <h3>Passt das zu Ihrer Situation?</h3>
+  <p>Ein unverbindliches Erstgespräch kostet Sie nichts – außer 30 Minuten Ihrer Zeit.</p>
+  <p><a class="btn" href="{{ '/kontakt/' | relative_url }}">Erstgespräch vereinbaren</a></p>
+</div>

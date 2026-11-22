@@ -1,0 +1,30 @@
+<footer class="ftr">
+  <div class="ftr-in">
+    <div class="ftr-col">
+      <h2>Integrita</h2>
+      <p>Audit &amp; Advisory<br>Informationssicherheit &amp; Datenschutz<br>Pragmatisch gedacht. Unabhängig geprüft.<br><br>{{ site.kontakt.ort_kurz }}</p>
+    </div>
+    <div class="ftr-col">
+      <h2>Leistungen</h2>
+      <a href="{{ '/leistungen/#mandate' | relative_url }}">Mandate (DSB, ISB, Whistleblowing)</a>
+      <a href="{{ '/leistungen/#audits' | relative_url }}">Zertifizierungsaudits</a>
+      <a href="{{ '/leistungen/#advisory' | relative_url }}">Advisory &amp; Consulting</a>
+      <a href="{{ '/leistungen/#schulung' | relative_url }}">Schulung &amp; Awareness</a>
+    </div>
+    <div class="ftr-col">
+      <h2>Themen</h2>
+      <a href="{{ '/themen/' | relative_url }}">NIS2 · DORA · KRITIS</a>
+      <a href="{{ '/themen/' | relative_url }}">EU AI Act</a>
+      <a href="{{ '/themen/' | relative_url }}">DSGVO · HinSchG</a>
+      <a href="{{ '/insights/' | relative_url }}">Insights &amp; Blog</a>
+    </div>
+    <div class="ftr-col">
+      <h2>Rechtliches</h2>
+      <a href="{{ '/impressum/' | relative_url }}">Impressum</a>
+      <a href="{{ '/datenschutz/' | relative_url }}">Datenschutzerklärung</a>
+      <a href="{{ '/cookie-einstellungen/' | relative_url }}">Cookie-Einstellungen</a>
+      <a href="{{ '/kontakt/' | relative_url }}">Kontakt</a>
+    </div>
+  </div>
+  <div class="ftr-bot">© {{ site.time | date: "%Y" }} {{ site.kontakt.firma }} | {{ site.kontakt.name }} | Alle Rechte vorbehalten</div>
+</footer>

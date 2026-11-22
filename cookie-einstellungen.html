@@ -1,0 +1,27 @@
+---
+layout: page
+title: Cookie-Einstellungen
+permalink: /cookie-einstellungen/
+sitemap: false
+untertitel: "Hier legen Sie fest, welche externen Dienste diese Website nutzen darf. Sie können Ihre Auswahl jederzeit ändern oder widerrufen."
+---
+{%- comment -%} Die Liste kommt aus _data/consent.yml {%- endcomment -%}
+<div class="prose">
+  <p>Diese Website setzt keine Analyse-, Tracking- oder Werbe-Cookies. Externe Dienste werden erst genutzt, wenn Sie hier zustimmen. Ein Widerruf gilt ab dem Zeitpunkt, an dem Sie ihn speichern.</p>
+  <form data-consent-settings>
+    <ul class="consent-list">
+      {%- for d in site.data.consent %}
+      <li>
+        <label for="consent-{{ d.id }}">
+          <input type="checkbox" id="consent-{{ d.id }}" name="{{ d.id }}"{% if d.pflicht %} checked disabled{% endif %}>
+          <span>{{ d.name }}{% if d.pflicht %} (immer aktiv){% endif %}</span>
+        </label>
+        <p>{{ d.beschreibung }}</p>
+      </li>
+      {%- endfor %}
+    </ul>
+    <button type="submit" class="btn">Auswahl speichern</button>
+    <span class="consent-saved" data-consent-saved role="status" aria-live="polite" hidden></span>
+  </form>
+  <p>Weitere Informationen finden Sie in der <a href="{{ '/datenschutz/#cookies' | relative_url }}">Datenschutzerklärung</a>.</p>
+</div>

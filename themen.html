@@ -1,0 +1,17 @@
+---
+layout: page
+title: Themen & Regulatorik
+permalink: /themen/
+description: "NIS2, DORA, EU AI Act, KRITIS, DSGVO und HinSchG – regulatorische Anforderungen pragmatisch und rechtzeitig umsetzen."
+untertitel: "Regulatorischer Druck steigt. Wir helfen Ihnen, Anforderungen pragmatisch und rechtzeitig umzusetzen – bevor der Prüfer kommt."
+---
+{%- comment -%} Die Karten stehen in _data/themen.yml {%- endcomment -%}
+<div class="th-cards">
+  {%- for t in site.data.themen %}
+  <article class="th-card">
+    <h2 class="th-title">{{ t.titel }}</h2>
+    <p>{{ t.text }}</p>
+    <span class="tag">{{ t.tag }}</span>
+  </article>
+  {%- endfor %}
+</div>
