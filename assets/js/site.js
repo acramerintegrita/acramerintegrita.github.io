@@ -175,19 +175,24 @@
           return;
         }
         return antwort.json().catch(function () { return {}; }).then(function (daten) {
+          // Technische Details nur in die Browser-Konsole (für die Fehlersuche),
+          // dem Besucher eine verständliche deutsche Meldung zeigen.
+          if (window.console) console.warn("Kontaktformular: HTTP " + antwort.status, daten);
           var details = "";
-          if (daten && Array.isArray(daten.errors)) {
-            details = daten.errors.map(function (x) { return x.message || x; }).join(" ");
-          } else if (daten && (daten.message || daten.error)) {
-            details = daten.message || daten.error;
-          } else if (antwort.status === 402) {
+          if (antwort.status === 402) {
             details = "Das Formular hat sein Monatskontingent erreicht.";
+          } else if (antwort.status === 422) {
+            details = "Der Formulardienst hat die Eingaben nicht angenommen.";
+          } else if (antwort.status === 429) {
+            details = "Es wurden zu viele Nachrichten in kurzer Zeit gesendet.";
           }
           throw new Error(details);
         });
       }).catch(function (fehler) {
         knopf.disabled = false;
-        zeige("Die Nachricht konnte nicht gesendet werden. " + (fehler && fehler.message ? fehler.message + " " : "") +
+        // Netzwerkfehler (TypeError) haben englische Browser-Texte – die nicht anzeigen
+        var grund = fehler && fehler.message && !(fehler instanceof TypeError) ? fehler.message + " " : "";
+        zeige("Die Nachricht konnte nicht gesendet werden. " + grund +
           "Bitte versuchen Sie es erneut oder schreiben Sie uns direkt per E-Mail.", "err");
       });
     });
