@@ -1,0 +1,16 @@
+---
+layout: null
+sitemap: false
+permalink: /.well-known/security.txt
+---
+{%- comment -%}
+  security.txt nach RFC 9116: sagt Sicherheitsforschern, wohin sie gefundene
+  Schwachstellen melden können. Die E-Mail kommt aus _config.yml.
+  "Expires" wird bei jedem Build neu auf heute + 1 Jahr gesetzt. Wird die Seite
+  ein Jahr lang nicht neu gebaut, läuft die Datei bewusst ab.
+{%- endcomment -%}
+{%- assign ablauf = site.time | date: "%s" | plus: 31536000 -%}
+Contact: mailto:{{ site.kontakt.email }}
+Expires: {{ ablauf | date: "%Y-%m-%dT%H:%M:%S%:z" }}
+Preferred-Languages: de, en
+Canonical: {{ "/.well-known/security.txt" | absolute_url }}

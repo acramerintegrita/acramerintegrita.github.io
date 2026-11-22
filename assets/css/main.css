@@ -283,6 +283,7 @@ fieldset:disabled .fg { opacity: .55; }
 }
 .form-gate p + p, .form-gate p + .btn { margin-top: 10px; }
 .form-msg { margin-top: 14px; font-size: 13px; padding: 10px 14px; border-radius: 4px; }
+.form-msg[data-form-unconfigured] { margin: 0 0 18px; }
 .form-msg.err { background: #FDECEC; color: #8A1C1C; border: 1px solid #F3C2C2; }
 .form-msg.info { background: var(--l); border: 1px solid var(--b); }
 .direct { font-size: 14px; line-height: 2.1; color: var(--s); }

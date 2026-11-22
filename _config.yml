@@ -25,12 +25,12 @@ kontakt:
   name: "Andreas J. Cramer"
   firma: "Integrita – Audit & Advisory"
   strasse: ""                     # z. B. "Musterstraße 1"
-  plz: ""                         # z. B. "85640"
+  plz: "85640"                         # z. B. "85640"
   ort: "Putzbrunn"
   ort_kurz: "Putzbrunn bei München"
-  email: ""                       # z. B. "kontakt@integrita.de"
-  telefon: ""                     # z. B. "+49 89 123456"
-  linkedin: ""                    # vollständige URL zum LinkedIn-Profil
+  email: "acramer.integrita@gmail.com"                       # z. B. "kontakt@integrita.de"
+  telefon: "+49 1707312628"                     # z. B. "+49 89 123456"
+  linkedin: "https://www.linkedin.com/in/andreas-cramer-6508358/"                    # vollständige URL zum LinkedIn-Profil
   ust_id: ""                      # USt-IdNr., z. B. "DE123456789"
 
 # --- Kontaktformular ----------------------------------------------------------
@@ -63,6 +63,10 @@ defaults:
       type: posts
     values:
       layout: post
+
+# Ordner mit Punkt am Anfang veröffentlicht Jekyll nur, wenn sie hier stehen
+include:
+  - .well-known
 
 exclude:
   - README.md
