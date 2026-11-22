@@ -237,6 +237,11 @@ a.card:hover, .card:hover { border-color: var(--a); box-shadow: 0 8px 24px rgba(
 .img-ph svg { width: 28px; height: 28px; stroke: currentColor; fill: none; stroke-width: 1.5; opacity: .6; }
 .img-ph code { font-size: 11px; opacity: .8; word-break: break-all; }
 
+/* KI-generierte Bilder: sichtbarer Hinweis (Art. 50 Abs. 4 EU AI Act) */
+.bild-ki { margin: 0; }
+.bild-ki figcaption { margin-top: 6px; font-size: 11px; line-height: 1.4; color: var(--s); letter-spacing: .02em; }
+.bild-ki figcaption::before { content: "\2726  "; color: var(--a-text); }
+
 /* --- Insights --------------------------------------------------------------- */
 .post-list { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .post-meta { font-size: 12px; color: var(--a-text); font-weight: 600; margin-bottom: 8px; }

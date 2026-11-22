@@ -3,11 +3,23 @@
   Aufruf:  {% include bild.html datei="andreas-portrait.jpg" alt="Andreas J. Cramer" beschreibung="Porträtfoto" %}
   Liegt die Datei unter assets/images/, wird das Foto gezeigt – sonst ein Platzhalter
   mit dem erwarteten Dateinamen. Foto hochladen genügt, am Code muss nichts geändert werden.
+
+  Optionen:
+    sofort=true  Bild nicht verzögert laden (für Bilder ganz oben auf der Seite)
+    ki=true      Bild ist mit KI erzeugt: sichtbarer Hinweis "KI-generierte Darstellung"
+                 (Transparenzpflicht nach Art. 50 Abs. 4 EU AI Act bei realen Personen)
 {%- endcomment -%}
 {%- assign bild_pfad = "/assets/images/" | append: include.datei -%}
 {%- assign gefunden = site.static_files | where: "path", bild_pfad | first -%}
 {%- if gefunden -%}
+  {%- if include.ki -%}
+<figure class="bild-ki">
+  <img class="img-real" src="{{ bild_pfad | relative_url }}" alt="KI-generierte Darstellung: {{ include.alt }}"{% unless include.sofort %} loading="lazy"{% endunless %} decoding="async">
+  <figcaption>KI-generierte Darstellung</figcaption>
+</figure>
+  {%- else -%}
 <img class="img-real" src="{{ bild_pfad | relative_url }}" alt="{{ include.alt }}"{% unless include.sofort %} loading="lazy"{% endunless %} decoding="async">
+  {%- endif -%}
 {%- else -%}
 <div class="img-ph" role="img" aria-label="Platzhalter: {{ include.beschreibung | default: include.alt }}">
   <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3.5"/><path d="M8 5l1.5-2h5L16 5"/></svg>

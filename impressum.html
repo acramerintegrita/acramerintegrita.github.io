@@ -21,8 +21,14 @@ Deutschland</p>
 <p>Telefon: {% include ph.html wert=k.telefon text="Telefon einfügen" %}<br>
 E-Mail: {% if k.email != "" %}<a href="mailto:{{ k.email }}">{{ k.email }}</a>{% else %}{% include ph.html text="E-Mail einfügen" %}{% endif %}</p>
 
+{%- comment -%}
+  USt-IdNr. nur angeben, wenn vorhanden (§ 5 Abs. 1 Nr. 6 DDG).
+  Kleinunternehmer nach § 19 UStG ohne USt-IdNr.: Feld in _config.yml leer lassen.
+{%- endcomment -%}
+{%- if k.ust_id != "" %}
 <h2>Umsatzsteuer-ID</h2>
-<p>Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG:<br>{% include ph.html wert=k.ust_id text="USt-IdNr. einfügen" %}</p>
+<p>Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG:<br>{{ k.ust_id }}</p>
+{%- endif %}
 
 {%- comment -%}
   PRÜFEN: Angaben zu Berufsbezeichnung/Kammer sind nach § 5 Abs. 1 Nr. 5 DDG nur bei
@@ -47,6 +53,9 @@ Zuständige Kammer: IHK für München und Oberbayern</p>
 
 <h2>Urheberrecht</h2>
 <p>Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des Autors.</p>
+
+<h2>Bildnachweis und Kennzeichnung von KI-Inhalten</h2>
+<p>Die Szenenbilder auf den Seiten „Leistungen“ (Schulung, Workshop) und „Über mich“ (Beiratssitzung) sind mit künstlicher Intelligenz erzeugte Darstellungen. Sie zeigen keine tatsächlich fotografierten Situationen und sind direkt am Bild als „KI-generierte Darstellung“ gekennzeichnet (Art. 50 Abs. 4 KI-Verordnung (EU) 2024/1689).</p>
 
 <h2>Verwendete Schriften</h2>
 <p>Diese Website verwendet die Schriften „Inter“ und „Cinzel“ unter der SIL Open Font License 1.1. Die Schriften werden von unserem eigenen Webspace geladen.</p>

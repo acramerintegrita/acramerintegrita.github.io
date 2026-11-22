@@ -26,7 +26,7 @@ baseurl: ""
 kontakt:
   name: "Andreas J. Cramer"
   firma: "Integrita – Audit & Advisory"
-  strasse: ""                     # z. B. "Musterstraße 1"
+  strasse: "Am Fablhof 17"                     # z. B. "Musterstraße 1"
   plz: "85640"                         # z. B. "85640"
   ort: "Putzbrunn"
   ort_kurz: "Putzbrunn bei München"
