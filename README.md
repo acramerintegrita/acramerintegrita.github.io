@@ -7,7 +7,7 @@ GitHub baut die Seite nach jeder Änderung automatisch neu (Jekyll, 1–2 Minute
 
 | Was | Datei |
 |---|---|
-| Kontaktdaten, Adresse, USt-IdNr., LinkedIn, Formspree-Kennung | `_config.yml` |
+| Kontaktdaten, Adresse, USt-IdNr., LinkedIn, Adresse des Kontaktformulars | `_config.yml` |
 | Leistungen (Mandate, Audits, Advisory, Schulung) | `_data/leistungen.yml` |
 | Themen & Regulatorik | `_data/themen.yml` |
 | Menü | `_data/navigation.yml` |
@@ -37,12 +37,16 @@ Foto mit genau diesem Namen nach `assets/images/` hochladen – es erscheint aut
 
 ## Kontaktformular einrichten
 
-1. Konto bei [formspree.io](https://formspree.io) anlegen, Formular erstellen.
-2. Auftragsverarbeitungsvertrag (DPA) mit Formspree abschließen.
-3. Kennung (z. B. `abcdwxyz` aus `https://formspree.io/f/abcdwxyz`) in `_config.yml` bei `formspree_id` eintragen.
-4. In `datenschutz.html`, Abschnitt 5, den Platzhalter zur Übermittlungsgrundlage ersetzen.
+Anbieter: [Formspring](https://formspring.io) (Pixel & Process UG, Lübeck; Server in Deutschland; AVV nach Art. 28 DSGVO).
 
-Das Formular wird erst nach Einwilligung freigeschaltet; vorher werden keine Daten an Formspree übertragen.
+1. Konto bei formspring.io anlegen, **New form → Empty form**.
+2. Benachrichtigungs-E-Mail und bei „Allowed origins“ `https://acramerintegrita.github.io` eintragen. Captcha, Akismet und KI-Funktionen **aus** lassen.
+3. Die vollständige Formular-Adresse (z. B. `https://frmsp.io/f/…`) in `_config.yml` bei `kontaktformular_url` eintragen.
+
+Beim Aufruf der Kontaktseite wird keine Verbindung zu Formspring aufgebaut, erst beim Absenden.
+Eine Einwilligung ist dafür nicht nötig. Soll das Formular trotzdem erst nach Zustimmung nutzbar sein,
+in `_data/consent.yml` einen Eintrag mit `id: kontaktformular` und `pflicht: false` anlegen.
+Die Content-Security-Policy übernimmt den Server automatisch aus dieser Adresse. Bei einem Anbieterwechsel Abschnitt 5 in `datenschutz.html` anpassen.
 
 ## Sicherheit
 

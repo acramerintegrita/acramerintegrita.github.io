@@ -2,7 +2,8 @@
    Integrita – Website-Skript
    - Mobiles Menü
    - Einwilligungsverwaltung (Banner + Seite /cookie-einstellungen/)
-   - Kontaktformular über Formspree (erst nach Einwilligung, Versand per fetch)
+   - Kontaktformular über Formspring (Versand per fetch; Einwilligungs-Sperre nur,
+     wenn in _data/consent.yml ein Eintrag "kontaktformular" steht)
    Keine externen Bibliotheken, keine Tracker.
    ========================================================================== */
 (function () {
@@ -15,7 +16,7 @@
   /* --- Einwilligung ------------------------------------------------------- */
   var COOKIE = "cookie-settings";
   var TAGE = 365;
-  var VERSION = 1; // erhöhen, wenn neue Dienste dazukommen -> Banner erscheint erneut
+  var VERSION = 2; // erhöhen, wenn Dienste dazukommen/wegfallen -> Banner erscheint erneut
 
   function lesen() {
     var m = document.cookie.match(/(?:^|;\s*)cookie-settings=([^;]*)/);
@@ -118,6 +119,12 @@
     var fehlt = document.querySelector("[data-form-unconfigured]");
     var meldung = form.querySelector("[data-form-msg]");
     var knopf = form.querySelector("button[type=submit]");
+    // Nur gesetzt, wenn _data/consent.yml einen Eintrag "kontaktformular" hat
+    var einwilligung = form.getAttribute("data-einwilligung");
+
+    function freigegeben() {
+      return !einwilligung || erlaubt(einwilligung);
+    }
 
     function aktualisieren() {
       if (!endpunkt) {
@@ -126,15 +133,15 @@
         if (fehlt) fehlt.hidden = false;
         return;
       }
-      var ok = erlaubt("formspree");
+      var ok = freigegeben();
       feldset.disabled = !ok;
       if (sperre) sperre.hidden = ok;
     }
 
-    if (sperre) {
+    if (sperre && einwilligung) {
       sperre.addEventListener("click", function (e) {
         if (!e.target.closest("[data-consent-grant]")) return;
-        erteilen("formspree");
+        erteilen(einwilligung);
         var erstes = document.getElementById("kf-name");
         if (erstes) erstes.focus();
       });
@@ -150,23 +157,32 @@
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-      if (!endpunkt || !erlaubt("formspree")) return;
+      if (!endpunkt || !freigegeben()) return;
       if (form.querySelector(".hp input").value) return; // Spam-Falle ausgefüllt
 
       knopf.disabled = true;
       zeige("Nachricht wird gesendet …", "info");
 
+      // Als normales Formular (x-www-form-urlencoded) senden: so dokumentiert der
+      // Anbieter es, und der Browser braucht keine CORS-Vorabanfrage.
       fetch(endpunkt, {
         method: "POST",
-        body: new FormData(form),
+        body: new URLSearchParams(new FormData(form)),
         headers: { Accept: "application/json" }
       }).then(function (antwort) {
         if (antwort.ok) {
           window.location.href = form.getAttribute("data-next");
           return;
         }
-        return antwort.json().then(function (daten) {
-          var details = daten && daten.errors ? daten.errors.map(function (x) { return x.message; }).join(" ") : "";
+        return antwort.json().catch(function () { return {}; }).then(function (daten) {
+          var details = "";
+          if (daten && Array.isArray(daten.errors)) {
+            details = daten.errors.map(function (x) { return x.message || x; }).join(" ");
+          } else if (daten && (daten.message || daten.error)) {
+            details = daten.message || daten.error;
+          } else if (antwort.status === 402) {
+            details = "Das Formular hat sein Monatskontingent erreicht.";
+          }
           throw new Error(details);
         });
       }).catch(function (fehler) {

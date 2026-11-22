@@ -4,10 +4,19 @@
 # Hier steht jeder Dienst, für den Besucher zustimmen müssen.
 # Die Website lädt KEINE Inhalte von Drittanbietern, bevor zugestimmt wurde.
 #
+# Derzeit gibt es keine einwilligungspflichtigen Dienste. Deshalb erscheint
+# kein Banner; die Seite Cookie-Einstellungen zeigt nur das notwendige Cookie.
+# Sobald unten ein Eintrag mit "pflicht: false" steht, erscheint der Banner
+# automatisch.
+#
 # Kommt ein neuer Dienst hinzu (z. B. YouTube-Videos, Analyse-Tool), muss er
 #   1. hier eingetragen,
 #   2. in der Datenschutzerklärung beschrieben und
 #   3. im Code nur geladen werden, wenn IntegritaConsent.has("<id>") wahr ist.
+#
+# Sonderfall Kontaktformular: Ein Eintrag mit "id: kontaktformular" sperrt das
+# Formular, bis zugestimmt wurde. Bei Formspring (deutscher Auftragsverarbeiter
+# mit AVV) ist das nicht nötig – Rechtsgrundlage ist Art. 6 Abs. 1 lit. b/f DSGVO.
 # =============================================================================
 
 - id: notwendig
@@ -17,12 +26,3 @@
     Speichert Ihre Auswahl in diesem Fenster im Cookie „cookie-settings“ für
     12 Monate, damit wir Sie nicht bei jedem Besuch erneut fragen. Ohne dieses
     Cookie funktioniert die Einwilligungsverwaltung nicht.
-
-- id: formspree
-  name: Kontaktformular (Formspree)
-  pflicht: false
-  beschreibung: >-
-    Erlaubt das Absenden des Kontaktformulars über den Dienst Formspree
-    (Formspree, Inc., USA). Ihre Eingaben werden erst beim Klick auf
-    „Nachricht senden“ übertragen. Alternativ erreichen Sie uns jederzeit
-    per E-Mail.

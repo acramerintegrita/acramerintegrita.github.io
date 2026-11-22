@@ -36,12 +36,14 @@ kontakt:
   ust_id: ""                      # USt-IdNr., z. B. "DE123456789"
 
 # --- Kontaktformular ----------------------------------------------------------
-# Das Formular wird über Formspree (formspree.io) versendet.
-# 1. Bei formspree.io anmelden, ein Formular anlegen
-# 2. Die Kennung aus der Formular-Adresse hier eintragen
-#    (aus https://formspree.io/f/abcdwxyz -> "abcdwxyz")
+# Das Formular wird über Formspring (formspring.io, Pixel & Process UG, Lübeck)
+# versendet. Daten liegen in Deutschland, AVV nach Art. 28 DSGVO.
+# Hier steht die vollständige Formular-Adresse aus dem Formspring-Dashboard
+# (frmsp.io ist die Kurz-Domain von Formspring).
 # Solange das Feld leer ist, zeigt die Kontaktseite nur die E-Mail-Adresse.
-formspree_id: ""
+# Die Content-Security-Policy übernimmt den Server aus dieser Adresse automatisch.
+# Wird der Anbieter gewechselt: datenschutz.html (Abschnitt 5) anpassen.
+kontaktformular_url: "https://frmsp.io/f/Bly92W0Gb2JI"
 
 # --- Datenschutzerklärung -----------------------------------------------------
 datenschutz_stand: "November 2026"

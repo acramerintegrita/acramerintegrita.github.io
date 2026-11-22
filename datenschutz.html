@@ -21,12 +21,17 @@ legal: true
 E-Mail: {% if k.email != "" %}<a href="mailto:{{ k.email }}">{{ k.email }}</a>{% else %}{% include ph.html text="E-Mail einfügen" %}{% endif %}<br>
 Telefon: {% include ph.html wert=k.telefon text="Telefon einfügen" %}</p>
 
+{%- assign optionale = site.data.consent | where: "pflicht", false -%}
 <h2>2. Das Wichtigste in Kürze</h2>
 <ul>
   <li>Diese Website verwendet <strong>kein Tracking, keine Analyse-Tools und keine Werbe-Cookies</strong>.</li>
+  {%- if optionale.size > 0 %}
   <li>Es wird nur ein einziges Cookie gesetzt: Es speichert Ihre Auswahl in den <a href="{{ '/cookie-einstellungen/' | relative_url }}">Cookie-Einstellungen</a>.</li>
+  {%- else %}
+  <li>Diese Website setzt <strong>keine Cookies</strong>.</li>
+  {%- endif %}
   <li>Schriften und alle übrigen Bestandteile der Website werden von unserem eigenen Webspace geladen – es gibt keine Verbindung zu Google oder anderen Drittanbietern beim Seitenaufruf.</li>
-  <li>Das Kontaktformular nutzt den Dienst Formspree und wird erst nach Ihrer Einwilligung freigeschaltet. Alternativ erreichen Sie uns jederzeit per E-Mail.</li>
+  <li>Das Kontaktformular wird über den deutschen Dienstleister Formspring (Lübeck) mit Servern in Deutschland verarbeitet. Alternativ erreichen Sie uns jederzeit per E-Mail.</li>
 </ul>
 
 <h2>3. Hosting über GitHub Pages</h2>
@@ -37,30 +42,36 @@ Telefon: {% include ph.html wert=k.telefon text="Telefon einfügen" %}</p>
 <p>Dabei können Daten in die USA übermittelt werden. Die GitHub, Inc. ist nach dem EU-US Data Privacy Framework zertifiziert; die Übermittlung erfolgt auf Grundlage des Angemessenheitsbeschlusses der EU-Kommission (Art. 45 DSGVO). Weitere Informationen: <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">Datenschutzerklärung von GitHub</a>.</p>
 
 <h2 id="cookies">4. Cookies und Einwilligungsverwaltung</h2>
+{%- if optionale.size > 0 %}
 <p>Diese Website setzt ausschließlich das Cookie <code>cookie-settings</code>. Es speichert, welchen optionalen Diensten Sie zugestimmt haben, und das Datum Ihrer Auswahl. Es enthält keine Kennung, mit der Sie wiedererkannt werden könnten, und wird nach 12 Monaten automatisch gelöscht.</p>
 <p>Das Speichern dieser Information ist unbedingt erforderlich, um Ihre Auswahl zu respektieren (§ 25 Abs. 2 Nr. 2 TDDDG). Rechtsgrundlage für die Verarbeitung ist Art. 6 Abs. 1 lit. c DSGVO in Verbindung mit Art. 7 Abs. 1 DSGVO (Nachweis der Einwilligung) sowie Art. 6 Abs. 1 lit. f DSGVO.</p>
 <p>Sie können Ihre Auswahl jederzeit in den <a href="{{ '/cookie-einstellungen/' | relative_url }}">Cookie-Einstellungen</a> ändern oder widerrufen. Außerdem können Sie Cookies in Ihrem Browser löschen oder blockieren; dann erscheint beim nächsten Besuch erneut die Abfrage.</p>
 <p>Optionale Dienste, für die wir Ihre Einwilligung einholen:</p>
-<table>
-  <thead><tr><th>Dienst</th><th>Zweck</th><th>Anbieter</th></tr></thead>
-  <tbody>
-    <tr><td>Kontaktformular</td><td>Übermittlung Ihrer Anfrage (siehe Abschnitt 5)</td><td>Formspree, Inc., USA</td></tr>
-  </tbody>
-</table>
+<ul>
+  {%- for d in optionale %}
+  <li><strong>{{ d.name }}:</strong> {{ d.beschreibung }}</li>
+  {%- endfor %}
+</ul>
+{%- else %}
+<p>Diese Website setzt derzeit <strong>keine Cookies</strong> und speichert keine Informationen auf Ihrem Endgerät. Es werden keine Dienste eingesetzt, die eine Einwilligung nach § 25 Abs. 1 TDDDG erfordern; deshalb erscheint auch kein Cookie-Banner.</p>
+<p>Sollten künftig einwilligungspflichtige Dienste hinzukommen, fragen wir Sie vorher. Ihre Auswahl würde dann in einem technisch notwendigen Cookie gespeichert (§ 25 Abs. 2 Nr. 2 TDDDG) und ließe sich in den <a href="{{ '/cookie-einstellungen/' | relative_url }}">Cookie-Einstellungen</a> jederzeit ändern.</p>
+{%- endif %}
 
-<h2 id="kontaktformular">5. Kontaktformular (Formspree)</h2>
-<p>Für das Kontaktformular nutzen wir den Dienst Formspree der Formspree, Inc., USA. Das Formular wird erst freigeschaltet, wenn Sie dem zustimmen. Ihre Eingaben werden erst übertragen, wenn Sie auf „Nachricht senden“ klicken. Vorher werden keine Daten an Formspree gesendet.</p>
-<p><strong>Verarbeitete Daten:</strong> Name, E-Mail-Adresse, Nachricht sowie freiwillig Unternehmen, Telefonnummer und gewähltes Interessengebiet. Beim Absenden verarbeitet Formspree zudem technische Daten wie Ihre IP-Adresse, Datum und Uhrzeit sowie Browserinformationen, auch zur Abwehr von Spam.</p>
-<p><strong>Zweck:</strong> Bearbeitung und Beantwortung Ihrer Anfrage. Formspree leitet die Nachricht per E-Mail an uns weiter.</p>
-<p><strong>Rechtsgrundlage:</strong> Für die Nutzung von Formspree Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Für die Bearbeitung Ihrer Anfrage Art. 6 Abs. 1 lit. b DSGVO, sofern sie auf einen Vertrag oder vorvertragliche Maßnahmen gerichtet ist, ansonsten unser berechtigtes Interesse an der Beantwortung von Anfragen (Art. 6 Abs. 1 lit. f DSGVO). Ihre Einwilligung können Sie jederzeit mit Wirkung für die Zukunft in den <a href="{{ '/cookie-einstellungen/' | relative_url }}">Cookie-Einstellungen</a> widerrufen.</p>
+<h2 id="kontaktformular">5. Kontaktformular (Formspring)</h2>
+<p>Für das Kontaktformular nutzen wir den Dienst Formspring der Pixel &amp; Process UG (haftungsbeschränkt), Marliring 74, 23566 Lübeck, Deutschland. Ihre Eingaben werden erst übertragen, wenn Sie auf „Nachricht senden“ klicken. Beim Aufruf der Kontaktseite wird keine Verbindung zu Formspring hergestellt.</p>
+<p><strong>Verarbeitete Daten:</strong> Name, E-Mail-Adresse, Nachricht sowie freiwillig Unternehmen, Telefonnummer und gewähltes Interessengebiet. Beim Absenden verarbeitet Formspring zudem technische Daten wie Ihre IP-Adresse, Datum und Uhrzeit sowie Browserinformationen, auch zur Abwehr von Spam (verstecktes Fangfeld, Begrenzung der Absendehäufigkeit). Externe Captcha-Dienste wie Google reCAPTCHA setzen wir nicht ein.</p>
+<p><strong>Zweck:</strong> Bearbeitung und Beantwortung Ihrer Anfrage. Formspring nimmt die Nachricht entgegen und leitet sie per E-Mail an uns weiter.</p>
+<p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage auf einen Vertrag oder vorvertragliche Maßnahmen gerichtet ist, ansonsten unser berechtigtes Interesse an der Beantwortung von Anfragen (Art. 6 Abs. 1 lit. f DSGVO).</p>
 {%- comment -%}
-  PRÜFEN vor Aktivierung des Formulars:
-  - Auftragsverarbeitungsvertrag (DPA) mit Formspree abschließen
-  - Übermittlungsgrundlage eintragen (DPF-Zertifizierung oder Standardvertragsklauseln)
-  - Aufbewahrung der Einsendungen im Formspree-Konto einstellen/löschen
+  PRÜFEN: Gilt der AVV von Formspring auch im Free-Tarif? Laut formspring.io/dpa ist er
+  Teil des Vertrags mit jedem Kunden; eine gegengezeichnete Fassung gibt es auf Anfrage
+  (info@pixelandprocess.de). Auf der Startseite steht "Signed DPA: available for paid plans".
+  Unterauftragnehmer: formspring.io/sub-processors (Stand der Prüfung: 24.10.2026).
 {%- endcomment %}
-<p><strong>Auftragsverarbeitung und Übermittlung in die USA:</strong> {% include ph.html text="Nach Abschluss des AVV mit Formspree eintragen: AVV nach Art. 28 DSGVO und Grundlage der Übermittlung (z. B. EU-US Data Privacy Framework oder Standardvertragsklauseln)" %}. Weitere Informationen: <a href="https://formspree.io/legal/privacy-policy/" rel="noopener">Datenschutzerklärung von Formspree</a>.</p>
-<p><strong>Speicherdauer:</strong> Wir löschen Ihre Anfrage, sobald sie abschließend bearbeitet ist und keine gesetzlichen Aufbewahrungspflichten entgegenstehen. Bei Formspree gespeicherte Einsendungen löschen wir regelmäßig.</p>
+<p><strong>Auftragsverarbeitung:</strong> Formspring verarbeitet die Daten in unserem Auftrag auf Grundlage eines Vertrags zur Auftragsverarbeitung nach Art. 28 DSGVO. Die Einsendungen werden auf Servern der Hetzner Online GmbH in Deutschland gespeichert und verarbeitet.</p>
+<p><strong>Übermittlung in Drittländer:</strong> Die Benachrichtigungs-E-Mail, mit der Formspring uns Ihre Nachricht zustellt, wird über den E-Mail-Dienstleister Postmark (Wildbit LLC / ActiveCampaign, USA) versendet. Dabei kann der Inhalt Ihrer Nachricht in die USA übermittelt werden. Grundlage dafür sind die Standardvertragsklauseln der EU-Kommission (Art. 46 Abs. 2 lit. c DSGVO). Optionale Zusatzfunktionen von Formspring mit Verarbeitung außerhalb der EU (z. B. KI-Funktionen, Captcha) nutzen wir nicht. Weitere Informationen: <a href="https://formspring.io/privacy" rel="noopener">Datenschutzerklärung von Formspring</a> und <a href="https://formspring.io/sub-processors" rel="noopener">Liste der Unterauftragsverarbeiter</a>.</p>
+{%- comment -%} PRÜFEN: Aufbewahrung im Formspring-Konto (Free-Tarif laut Anbieter: 30 Tage) ggf. kürzer einstellen. {%- endcomment %}
+<p><strong>Speicherdauer:</strong> Formspring bewahrt Einsendungen in dem von uns genutzten Tarif bis zu 30 Tage auf. Die per E-Mail erhaltene Anfrage löschen wir, sobald sie abschließend bearbeitet ist und keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</p>
 
 <h2>6. Kontakt per E-Mail oder Telefon</h2>
 <p>Wenn Sie uns per E-Mail oder Telefon kontaktieren, verarbeiten wir Ihre Angaben (z. B. Name, Kontaktdaten, Inhalt der Anfrage) zur Bearbeitung Ihres Anliegens. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist, im Übrigen Art. 6 Abs. 1 lit. f DSGVO. Die Daten werden gelöscht, sobald sie nicht mehr erforderlich sind und keine gesetzlichen Aufbewahrungspflichten bestehen.</p>

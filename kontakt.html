@@ -6,27 +6,26 @@ description: "Kontakt zu Integrita – Audit & Advisory. Unverbindliches Erstges
 untertitel: "Lassen Sie uns sprechen. Ein unverbindliches Erstgespräch kostet Sie nichts – außer 30 Minuten Ihrer Zeit."
 ---
 {%- assign k = site.kontakt -%}
-{%- if site.formspree_id and site.formspree_id != "" -%}
-  {%- assign endpunkt = "https://formspree.io/f/" | append: site.formspree_id -%}
-{%- else -%}
-  {%- assign endpunkt = "" -%}
-{%- endif -%}
+{%- assign endpunkt = site.kontaktformular_url | default: "" | strip -%}
+{%- comment -%}
+  Einwilligungs-Sperre nur, wenn _data/consent.yml einen Eintrag "kontaktformular" hat.
+  Bei Formspring (deutscher Auftragsverarbeiter mit AVV) ist keine Einwilligung nötig.
+{%- endcomment -%}
+{%- assign sperre = site.data.consent | where: "id", "kontaktformular" | first -%}
 <div class="contact-grid">
   <div>
-    {%- comment -%}
-      Das Formular ist zunächst gesperrt. Erst nach Einwilligung (Banner, Cookie-Einstellungen
-      oder Knopf unten) wird es freigeschaltet. Übertragen wird erst beim Absenden.
-    {%- endcomment %}
+    {%- if sperre %}
     <div class="form-gate" data-form-gate>
-      <p><strong>Hinweis zum Kontaktformular:</strong> Ihre Nachricht wird über den Dienst Formspree (Formspree, Inc., USA) an uns übermittelt. Dafür benötigen wir Ihre Einwilligung. Details finden Sie in der <a href="{{ '/datenschutz/#kontaktformular' | relative_url }}">Datenschutzerklärung</a>.</p>
+      <p><strong>Hinweis zum Kontaktformular:</strong> {{ sperre.beschreibung }} Details finden Sie in der <a href="{{ '/datenschutz/#kontaktformular' | relative_url }}">Datenschutzerklärung</a>.</p>
       <p>Sie möchten das nicht? Schreiben Sie uns einfach direkt per E-Mail (siehe „Direkt erreichen“).</p>
-      <button type="button" class="btn" data-consent-grant="formspree">Kontaktformular aktivieren</button>
+      <button type="button" class="btn" data-consent-grant="kontaktformular">Kontaktformular aktivieren</button>
     </div>
+    {%- endif %}
     <div class="form-msg info" data-form-unconfigured hidden>
       Das Kontaktformular ist noch nicht eingerichtet. Bitte schreiben Sie uns per E-Mail.
     </div>
 
-    <form id="kontakt-form" data-endpoint="{{ endpunkt }}" data-next="{{ '/danke/' | relative_url }}" method="post" action="{{ endpunkt }}">
+    <form id="kontakt-form" data-endpoint="{{ endpunkt }}" data-next="{{ '/danke/' | relative_url }}"{% if sperre %} data-einwilligung="kontaktformular"{% endif %} method="post" action="{{ endpunkt }}">
       <fieldset disabled>
         <legend class="hp">Kontaktformular</legend>
         <div class="fg"><label for="kf-name">Name *</label><input id="kf-name" name="name" type="text" autocomplete="name" required placeholder="Ihr vollständiger Name"></div>
@@ -46,10 +45,8 @@ untertitel: "Lassen Sie uns sprechen. Ein unverbindliches Erstgespräch kostet S
           </select>
         </div>
         <div class="fg"><label for="kf-nachricht">Nachricht *</label><textarea id="kf-nachricht" name="nachricht" required placeholder="Wie kann ich Sie unterstützen?"></textarea></div>
-        <div class="fg"><label class="chk" for="kf-ds"><input id="kf-ds" name="datenschutz" type="checkbox" value="zur Kenntnis genommen" required><span>Ich habe die <a href="{{ '/datenschutz/' | relative_url }}">Datenschutzerklärung</a> zur Kenntnis genommen. Meine Angaben werden zur Bearbeitung der Anfrage verwendet. *</span></label></div>
-        <div class="hp" aria-hidden="true"><label for="kf-gotcha">Bitte leer lassen</label><input id="kf-gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off"></div>
-        <input type="hidden" name="_subject" value="Neue Anfrage über die Integrita-Website">
-        <button class="btn" type="submit">Nachricht senden</button>
+        <div class="fg"><label class="chk" for="kf-ds"><input id="kf-ds" name="datenschutz" type="checkbox" value="zur Kenntnis genommen" required><span>Ich habe die <a href="{{ '/datenschutz/' | relative_url }}">Datenschutzerklärung</a> zur Kenntnis genommen. Meine Angaben werden zur Bearbeitung der Anfrage verwendet und dafür über den Dienstleister Formspring (Lübeck, Server in Deutschland) übermittelt. *</span></label></div>
+        <div class="hp" aria-hidden="true"><label for="kf-gotcha">Bitte leer lassen</label><input id="kf-gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off"></div>        <button class="btn" type="submit">Nachricht senden</button>
         <p class="form-msg" data-form-msg role="status" aria-live="polite" hidden></p>
       </fieldset>
     </form>

@@ -6,7 +6,9 @@ sitemap: false
 untertitel: "Hier legen Sie fest, welche externen Dienste diese Website nutzen darf. Sie können Ihre Auswahl jederzeit ändern oder widerrufen."
 ---
 {%- comment -%} Die Liste kommt aus _data/consent.yml {%- endcomment -%}
+{%- assign optionale = site.data.consent | where: "pflicht", false -%}
 <div class="prose">
+  {%- if optionale.size > 0 %}
   <p>Diese Website setzt keine Analyse-, Tracking- oder Werbe-Cookies. Externe Dienste werden erst genutzt, wenn Sie hier zustimmen. Ein Widerruf gilt ab dem Zeitpunkt, an dem Sie ihn speichern.</p>
   <form data-consent-settings>
     <ul class="consent-list">
@@ -23,5 +25,9 @@ untertitel: "Hier legen Sie fest, welche externen Dienste diese Website nutzen d
     <button type="submit" class="btn">Auswahl speichern</button>
     <span class="consent-saved" data-consent-saved role="status" aria-live="polite" hidden></span>
   </form>
+  {%- else %}
+  <p><strong>Derzeit gibt es nichts einzustellen.</strong> Diese Website setzt keine Cookies und bindet keine externen Dienste ein, die Ihre Einwilligung erfordern – kein Tracking, keine Analyse, keine Werbung, keine eingebetteten Inhalte von Drittanbietern.</p>
+  <p>Kommt künftig ein solcher Dienst hinzu, können Sie ihn hier freigeben oder ablehnen, und wir fragen Sie beim nächsten Besuch.</p>
+  {%- endif %}
   <p>Weitere Informationen finden Sie in der <a href="{{ '/datenschutz/#cookies' | relative_url }}">Datenschutzerklärung</a>.</p>
 </div>

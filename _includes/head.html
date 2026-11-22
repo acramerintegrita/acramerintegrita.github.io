@@ -4,7 +4,12 @@
   Sicherheits-Header als Meta-Tags (GitHub Pages erlaubt keine eigenen HTTP-Header).
   Wird ein neuer externer Dienst eingebunden, muss er hier freigegeben werden.
 {%- endcomment %}
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+{%- comment -%} Server des Kontaktformulars (z. B. https://frmsp.io) aus _config.yml ableiten {%- endcomment -%}
+{%- assign formular_server = "" -%}
+{%- if site.kontaktformular_url and site.kontaktformular_url != "" -%}
+  {%- assign formular_server = site.kontaktformular_url | split: "/" | slice: 0, 3 | join: "/" | prepend: " " -%}
+{%- endif %}
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'{{ formular_server }}; form-action 'self'{{ formular_server }}; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="keywords" content="ISO 27001, ISO 9001, Datenschutzbeauftragter, ISB, DSB, ISMS, DSGVO, NIS2, DORA, AI Governance, München, TÜV Austria, Lead Auditor, BCM, Whistleblowing, Beirat">
 <meta name="theme-color" content="#0A3D62">
